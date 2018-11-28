@@ -1,0 +1,34 @@
+RewriteEngine On
+
+#redirect us if not directory
+RewriteCond  %{REQUEST_FILENAME} !-d
+#redirect us if not file
+RewriteCond  %{REQUEST_FILENAME} !-f
+#redirect us if not link
+RewriteCond  %{REQUEST_FILENAME} !-l
+
+
+
+RewriteRule ^(.+)$  index.php?url=$1 [QSA,L]
+
+
+
+
+
+
+#If the following conditions are true, then rewrite the URL:
+#If the requested filename is not a directory,
+#
+#RewriteCond %{REQUEST_FILENAME} !-d
+#and if the requested filename is not a regular file that exists,
+#
+#RewriteCond %{REQUEST_FILENAME} !-f
+#and if the requested filename is not a symbolic link,
+#
+#RewriteCond %{REQUEST_FILENAME} !-l
+#then rewrite the URL in the following way:
+#Take the whole request filename and provide it as the value of a "url" query parameter to post.php. Append any query string from the original URL as further query parameters (QSA), and stop processing this .htaccess file (L).
+#
+#RewriteRule ^(.+)$ post.php?url=$1 [QSA,L]#
+
+
