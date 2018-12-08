@@ -1,3 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <users>
-<user id="43"><name>mohammed elamin</name></user><user id="44"><name>mohammed elamin</name></user></users>
+
+    
+    
+    
+    
+<User id="5"><name>mohammed elamin</name><phone>902649933</phone><email>melamin100@yahoo.com</email><ImagePath>1544187318main-qimg-64de7cc24b9dee3197c7cd841e300f89-c.jpg</ImagePath></User><User id="6"><name>معماريه الحاسوب</name><phone>902649933</phone><email>moesayed@yahoo.com</email><ImagePath>1544187347mersmann_02.jpg</ImagePath></User><User id="7"><name>هندسه البرمجيات</name><phone>902649933</phone><email>khalid@yahoo.com</email><ImagePath>1544187390mark-stewart_8600_6871.jpg</ImagePath></User><User id="8"><name>تحليل وتصميم الخوارزميات</name><phone>902649933</phone><email>admin@yahoo.com</email><ImagePath>1544187417hyperreal-pencil-drawings-nigerian-arinze-stanley-35.jpg</ImagePath></User><User id="9"><name>علوم الحاسب</name><phone>902649933</phone><email>obadan@yahoo.com</email><ImagePath>1544187507main-qimg-b1dbcc23cddd76063218f022657ebf2a-c.jpg</ImagePath></User></users>

@@ -13,8 +13,7 @@ class ErrorsController
 
     public function __construct()
     {
-        echo '<p style="color: red">Error:controller not exist</p>';
-        throw  new Exception('controller dose not exist');
+        echo '<h1 style="color: red"> Opps !!! Page Not Found !! </h1>';
     }
 
 }

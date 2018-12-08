@@ -2,7 +2,7 @@
 /**
  * Created by PhpStorm.
  * User: Mohammed Elamin
- * Date: 28/11/2018
+ * Date: 28/11/2018s
  * Time: 00:24
  */?>
 
@@ -14,6 +14,7 @@
 <body>
 
 <h1>Welcome to Posts page</h1>
+
 
 </body>
 </html>

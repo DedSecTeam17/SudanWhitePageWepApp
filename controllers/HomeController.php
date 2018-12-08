@@ -6,18 +6,31 @@
      * Time: 11:27
      */
 
-    class IndexController extends  Controller
+
+    class HomeController extends Controller
     {
 
 
         public function __construct()
         {
-            Parent::__construct();
+            Parent::__construct('Phone');
         }
 
+        public function index()
+        {
+            return $this->view->render('pages.index');
+        }
 
-        public function  index(){
-            return $this->view('index.index');
+        public function about()
+        {
+            return $this->view->render('pages.about');
+
+        }
+
+        public function contactUs()
+        {
+            return $this->view->render('pages.contactUs');
+
         }
 
     }

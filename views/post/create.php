@@ -15,7 +15,7 @@
 
 <h3>This is the view for create file <3 </h3>
 
-<form>
+<form method="post" action="/projects/mvc_application/PostController/store">
     <input name="email" placeholder="enter email" type="email">
     <input name="password" placeholder="enter password" type="password">
     <button  type="submit" >Login</button>

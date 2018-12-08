@@ -11,7 +11,16 @@ class  View{
 
     public function __construct()
     {
-        echo 'this is the view';
+//        echo 'this is the view';
+    }
+
+
+    public function render($name, $data = null)
+    {
+//        replace . with the slash
+        $newName = str_replace('.', '/', $name);
+        return require 'views/' . $newName . '.php';
+
     }
 
 }

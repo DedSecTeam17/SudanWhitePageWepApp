@@ -1,60 +1,76 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Mohammed Elamin
- * Date: 27/11/2018
- * Time: 23:50
- */
+    /**
+     * Created by PhpStorm.
+     * User: Mohammed Elamin
+     * Date: 27/11/2018
+     * Time: 23:50
+     */
 
-class BootStrap
-{
-
-    public function __construct()
+    class BootStrap
     {
 
+        public function __construct()
+        {
 
-    }
+
+        }
 
 
-    function _init()
-    {
+        function _init()
+        {
 
 // explode will explode it to an array the first post
 // is is the controller name and second one is the
 // method inside the controller
 
-        $trimedUrl = rtrim($_GET['url'], '/');
 
-        $url = explode('/', $trimedUrl);
+            $url = isset($_GET['url']) ? $_GET['url'] : null;
 
-//        echo print_r($url);
+            $url = rtrim($url, '/');
+
+            $url = explode('/', $url);
 
 
-// we get the main controller out there <3
+//            echo print_r($url);
 
-        $file = 'controllers/' . $url[0] . '.php';
 
-        if (file_exists($file)) {
-            require $file;
-            $controller = new $url[0];
+//            check if first array item is empty or not if empty redirect to index file
 
-            if (isset($url[1])) {
+            if (empty($url[0])) {
+                require 'controllers/HomeController.php';
+
+                $index = new HomeController();
+                $index->index();
+            } else {
+
+                // we get the main controller out there <3
+
+                $file = 'controllers/' . $url[0] . '.php';
+
+                if (file_exists($file)) {
+                    require $file;
+                    $controller = new $url[0];
+
+                    if (isset($url[1])) {
 //     function name to be executed
-                if (isset($url[2])) {
-                    $controller->{$url[1]}($url);
+                        if (isset($url[2])) {
+                            $controller->{$url[1]}($url[2]);
+                        } else {
+
+
+                            $controller->{$url[1]}();
+
+                        }
+                    }
                 } else {
-                    $controller->{$url[1]}();
+                    require 'controllers/ErrorsController.php';
+
+                    $err = new ErrorsController();
 
                 }
-            }
-        } else {
-            require 'controllers/ErrorsController.php';
 
-            $err = new ErrorsController();
+            }
 
         }
 
-
     }
-
-}

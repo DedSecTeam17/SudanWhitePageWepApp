@@ -6,14 +6,16 @@
  * Time: 00:46
  */
 
+
 class Model
 {
 
 
     public function __construct()
     {
+        $this->db=new DataBase(DB_TYPE, DB_HOST, DB_NAME, DB_USER, DB_PASS);
 
-        echo 'This is the main Model';
     }
+
 
 }
