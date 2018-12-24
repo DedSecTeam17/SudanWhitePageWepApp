@@ -6,14 +6,19 @@
  * Time: 23:58
  */
 
-class ErrorsController
+class ErrorsController extends  Controller
 {
 
 
 
     public function __construct()
     {
-        echo '<h1 style="color: red"> Opps !!! Page Not Found !! </h1>';
+       Parent::__construct();
+    }
+
+
+    public  function  err(){
+        return $this->view->render('errors.error');
     }
 
 }

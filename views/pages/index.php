@@ -4,28 +4,31 @@
     <?php require 'views/partials/headers.php' ?>
 </head>
 <body>
-<div class="non">
     <!--    nav bar -->
-    <?php
-        require 'views/partials/nav_bar.php'
-    ?>
-    <div class="row">
-        <div class="col s3">
 
-        </div>
-        <div class="col s6 ">
-            <div class="card">
-                <div class="card-content">
-                    <h1>Welcome !!</h1>
-                    <button class="btn btn-success">Discover beyond</button>
-                </div>
+
+
+
+    <div class="container-fluid">
+        <?php
+            require 'views/partials/nav_bar.php'
+        ?>
+
+        <div class="raw m-3">
+            <div class="col-md-8 offset-2">
+                <div class="jumbotron">
+                    <h3>Welcome to Phoenix FrameWork</h3>
+                    <button class="btn btn-info ">More info ...</button>
                 </div>
             </div>
-        <div class="col s3">
+        </div>
 
-        </div>
-        </div>
     </div>
+
+
+
+
+
 
 
 

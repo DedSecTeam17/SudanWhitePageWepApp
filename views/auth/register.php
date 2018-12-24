@@ -10,43 +10,39 @@
         require 'views/partials/nav_bar.php'
     ?>
     <!-- login-->
-    <div class="row ">
-        <div class="col s3">
+    <div class="raw m-3">
+        <div class="col-md-6 offset-3">
 
-        </div>
-        <div class="col s6 ">
             <div class="card">
-                <div class="card-content">
+                <div class="card-body">
                     <form method="post" action="<?php echo Route::to('registerStore', 'AuthController', null) ?>">
-
-                        <div class="input-field">
-                            <label for="name">Full name</label>
-                            <input type="text"  id="name" name="name" aria-describedby="name"
-                                   placeholder="Enter name">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Full Name" name="name">
                         </div>
-                        <div class="input-field">
-                            <label for="email">Email address</label>
-                            <input type="email"  id="email" name="email"
-                                   aria-describedby="emailHelp"
-                                   placeholder="Enter email">
+
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" placeholder="Enter email" name="email">
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                                 else.
                             </small>
                         </div>
-                        <div class="input-field">
-                            <label for="password">Password</label>
-                            <input type="password"  name="password" id="password"
-                                   placeholder="Password">
+
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                   placeholder="Password" name="password">
                         </div>
 
-                        <button type="submit" class="waves-effect waves-light btn-large" style="width: 100%">Register</button>
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
                     </form>
+
                 </div>
-
             </div>
-        </div>
-        <div class="col s3">
-
         </div>
     </div>
 

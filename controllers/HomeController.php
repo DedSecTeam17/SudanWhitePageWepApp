@@ -13,7 +13,7 @@
 
         public function __construct()
         {
-            Parent::__construct('Phone');
+            Parent::__construct();
         }
 
         public function index()
@@ -30,6 +30,12 @@
         public function contactUs()
         {
             return $this->view->render('pages.contactUs');
+
+        }
+
+        public  function  home(){
+            $this->middleWare('Auth');
+            return $this->view->render('pages.home');
 
         }
 

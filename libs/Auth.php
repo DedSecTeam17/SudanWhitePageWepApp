@@ -39,11 +39,10 @@
 
 
         /*this method set new session for new user */
-        public function authenticateNewUser(User $user)
+        public function authenticateNewUser($id)
         {
-            self::set('id', $user->getId());
+            self::set('id', $id);
             self::set('loggedIn', true);
-            self::set('email', $user->getEmail());
         }
 
 
@@ -58,12 +57,13 @@
         public function user()
         {
             if (file_exists('models/User.php')) {
-                require 'models/User.php';
+                require_once 'models/User.php';
                 $model = new User();
-                $session_key = self::get('id');
-                return $model->getUser($session_key);
-            } else {
-                return 'this file it,s not exist';
+
+                $session_key = self::get('id')->id;
+
+                return $model->find($session_key);
+
             }
         }
     }

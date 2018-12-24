@@ -32,47 +32,62 @@
         function loginStore($args = false)
         {
 
-            $user = new User();
-            $user->setEmail($this->getPostRequestData('email'));
-            $user->setPassword($this->getPostRequestData('password'));
-            $user->setId($user->login($user));
+            $validation_result = $this->validator->validate([
+                $this->getPostRequestData('email') => 'email',
+                $this->getPostRequestData('password') => 'min:6|max:12'
+            ])->execute();
 
+            if ($validation_result->getisValid()) {
+                $user = new User();
 
+                $id = $user
+                    ->select(['id'], null, null)
+                    ->where([['email', '=', $this->getPostRequestData('email'), '&&'], ['password', '=', Hash::passwordHashing($this->getPostRequestData('password'))]])->get();
+                if ($id > 0) {
 
+                    Auth::getInstance()->authenticateNewUser($id);
 
-            if ($user->getId()> 0)
-            {
-                Auth::getInstance()->authenticateNewUser($user);
+                    Route::redirectTo(
+                        Route::to('home', 'HomeController', null, false));
+                }
 
-
-                return Route::redirectTo(
-                    Route::to('index','PhoneController',null,false));
-
-            }else{
-                return Route::redirectTo(
-                    Route::to('getLogin','AuthController',null,false));
-
+            } else {
+                $error = $validation_result->getMessage();
+                return $this->view->render('auth.login', $error);
             }
-
-
         }
 
         function registerStore()
         {
-            $user = new User();
-            $user->setEmail($this->getPostRequestData('email'));
-            $user->setFullName($this->getPostRequestData('name'));
-            $user->setPassword(Hash::passwordHashing($this->getPostRequestData('password')));
-            $user->save($user);
-            return $this->view->render('pages.index');
+            $validation_result = $this->validator->validate([
+                $this->getPostRequestData('email') => 'email',
+                $this->getPostRequestData('name') => 'string|min:5|max:20',
+                $this->getPostRequestData('password') => 'min:6|max:12'
+            ])->execute();
+
+            if ($validation_result->getisValid()) {
+                $user = new User();
+                $user->columns['name'] = $this->getPostRequestData('name');
+                $user->columns['email'] = $this->getPostRequestData('email');
+                $user->columns['password'] = Hash::passwordHashing($this->getPostRequestData('password'));
+                $user->insert();
+
+                Route::redirectTo(
+                    Route::to('getLogin', 'AuthController', null, false));
+            } else {
+                echo $validation_result->getMessage();
+            }
+
+//            return $this->view->render('pages.index');
 
         }
 
 
-        public  function  getLogOut(){
+        public function getLogOut()
+        {
             Auth::getInstance()->logout();
             return Route::redirectTo(
-                Route::to('index','PhoneController',null,false));
+                Route::to('index', 'HomeController', null, false));
 
         }
 
