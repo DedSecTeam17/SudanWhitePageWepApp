@@ -9,7 +9,7 @@
     class User extends Model
     {
 
-        public $table_name='users';
+        public $table_name='user';
         public $fullAble=['id','name','email','password'];
 
 

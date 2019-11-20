@@ -7,6 +7,6 @@
      */
 
     define('host','localhost');
-    define('dbname','phonebook');
+    define('dbname','sudan_white_page');
     define('user','root');
     define('password','');

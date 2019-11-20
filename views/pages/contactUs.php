@@ -3,15 +3,20 @@
     <title>Home Page</title>
     <?php require 'views/partials/headers.php' ?>
 </head>
+
+
 <body>
+<?php
+require 'views/partials/nav_bar.php'
+?>
+
 <div class="container-fluid">
-    <?php
-        require 'views/partials/nav_bar.php'
-    ?>
+
+    <div class="row mt-5">
+
+        <div class="col-md-4 offset-md-4">
 
 
-    <div class="raw m-3">
-        <div class="col-md-6 offset-3 ">
             <div class="card">
                 <div class="card-body">
                     <form>
@@ -42,11 +47,17 @@
 
     </div>
 
+
+    <!-- Sidebar -->
+
+    <!-- Page Content -->
+
+
 </div>
 
+
 <?php
-    require 'views/partials/footer.php'
+require 'views/partials/footer.php'
 ?>
 </body>
 </html>
-

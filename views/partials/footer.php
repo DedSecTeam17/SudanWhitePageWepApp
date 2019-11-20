@@ -45,7 +45,7 @@
 <!--    });-->
 <!--</script>-->
 
-
-<footer style="border: #eeeeee 1px solid ; border-radius: 5px">
-    Phoenix FrameWork
-</footer>
+<!---->
+<!--<footer style="border: #eeeeee 1px solid ; border-radius: 5px">-->
+<!--    Phoenix FrameWork-->
+<!--</footer>-->

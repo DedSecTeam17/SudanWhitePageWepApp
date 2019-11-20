@@ -1,11 +1,11 @@
 <?php
 
-    define('URL', '/projects/mvc_application/');
+    define('URL', '/server_projects/sudan_white_page/');
 
 
     define('DB_TYPE', 'mysql');
     define('DB_HOST', 'localhost');
-    define('DB_NAME', 'phonebook');
+    define('DB_NAME', 'sudan_white_page');
     define('DB_USER', 'root');
     define('DB_PASS', '');
 

@@ -7,18 +7,21 @@
 <!--    nav bar -->
 
 
-
+<?php
+require 'views/partials/nav_bar.php'
+?>
 
 <div class="container-fluid">
-    <?php
-        require 'views/partials/nav_bar.php'
-    ?>
+
 
     <div class="raw m-3">
-        <div class="col-md-8 offset-2">
-            <div class="jumbotron">
+        <div class="col-md-3 ">
+            <div class="card">
+                <div class="card-body">
+                    <div style="height: 10%; background: darkgrey" >
 
-                <h3>Welcome <?php print_r(Auth::getInstance()->user()->name) ?> </h3>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
