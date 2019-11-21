@@ -20,29 +20,33 @@ require 'views/partials/nav_bar.php'
 
             <div class="card">
                 <div class="card-body">
-                    <form>
+                    <form method="post" enctype="multipart/form-data"
+                          action="<?php echo Route::to('update', 'ProfileController', $data['id'], true) ?>">
 
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Upload profile image</label>
                             <input type="file" class="form-control-file" id="exampleFormControlFile1"
-                                   name="contact_image">
+                                   name="profile_image">
                         </div>
 
 
                         <div class="form-group">
                             <label for="p_num">Number</label>
-                            <input type="tel" class="form-control" id="p_num" placeholder="Phone number" name="p_num">
+                            <input type="tel" class="form-control" id="phone_number" placeholder="Phone number"
+                                   name="phone_number" required
+                                   value="<?php echo !empty($data['profile']) ? $data['profile']->phone_number : "" ?>">
                         </div>
 
                         <div class="form-group">
                             <label for="job">Job</label>
-                            <input type="text" class="form-control" id="job" placeholder="job" name="job">
+                            <input type="text" class="form-control" id="job" placeholder="job" name="job" required
+                                   value="<?php echo !empty($data['profile']) ? $data['profile']->job : "" ?>">
                         </div>
                         <div class="form-group">
                             <label for="address">about</label>
-                            <textarea  class="form-control" id="address" placeholder="address" name="address"></textarea>
+                            <input class="form-control" id="address" placeholder="about_me" name="about_me"
+                                      required  value="<?php echo !empty($data['profile']) ? $data['profile']->about_me : "" ?>">
                         </div>
-
 
 
                         <button type="submit" class="btn btn-outline-primary btn-block">Update</button>
