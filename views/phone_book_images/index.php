@@ -1,4 +1,4 @@
-<html>
+<html lang="ar">
 <head>
     <title>Home Page</title>
     <?php require 'views/partials/headers.php' ?>
@@ -18,12 +18,16 @@ require 'views/partials/nav_bar.php'
             <div class="card">
 
                 <div class="card-body">
-                    <form>
+                    <form method="POST" enctype="multipart/form-data"
+                          action="<?php echo Route::to('store', 'PhoneBookImagesController', null, false) ?>">
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Upload contact image</label>
                             <input type="file" class="form-control-file" id="exampleFormControlFile1"
-                                   name="contact_image">
+                                   name="image" required>
                         </div>
+
+                        <input hidden name="id" value="<?php echo $data["id"] ?>">
+
 
                         <div class="form-group">
                             <button class="btn btn-outline-dark btn-block"><i class="fas fa-upload"></i></button>
@@ -41,50 +45,47 @@ require 'views/partials/nav_bar.php'
 
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-6 mt-1">
-                            <div class="card">
-                                <div class="card-header">
-                                    <a href="<?php echo Route::to('delete', 'PhoneBookImageController', 1, true) ?>"  class="btn btn-outline-danger"><i class="fas fa-minus-square"></i></a>
-                                </div>
-                                <div class="card-body">
-                                    <img src="https://via.placeholder.com/600/771796"
-                                         style="width: 100%; height: 150px">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mt-1">
-                            <div class="card">
-                                <div class="card-header">
-                                    <button class="btn btn-outline-danger"><i class="fas fa-minus-square"></i></button>
-                                </div>
-                                <div class="card-body">
-                                    <img src="https://via.placeholder.com/600/771796"
-                                         style="width: 100%; height: 150px">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mt-1">
-                            <div class="card">
-                                <div class="card-header">
-                                    <button class="btn btn-outline-danger"><i class="fas fa-minus-square"></i></button>
-                                </div>
-                                <div class="card-body">
-                                    <img src="https://via.placeholder.com/600/771796"
-                                         style="width: 100%; height: 150px">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mt-1">
-                            <div class="card">
-                                <div class="card-header">
-                                    <button class="btn btn-outline-danger"><i class="fas fa-minus-square"></i></button>
-                                </div>
-                                <div class="card-body">
-                                    <img src="https://via.placeholder.com/600/771796"
-                                         style="width: 100%; height: 150px">
-                                </div>
-                            </div>
-                        </div>
+
+                        <?php
+
+
+                        foreach ($data["images"] as $image) {
+
+
+                            echo ' <div class="col-md-6 mt-1">
+                            <div class="card">';
+
+
+                            echo '  <div class="card-header">';
+
+
+                            /*                            echo ' <a href="<?php echo Route::to(\'delete\', \'PhoneBookImageController\', 1, true) ?>" */
+//  class="btn btn-outline-danger"><i class="fas fa-minus-square"></i></a>';
+
+                            echo '</div>';
+
+
+                            echo '<div class="card-body">';
+
+
+                            echo '<img src="' . '../public/img/contacts_images/' . $image->image_url . '" style="width : 100%; height : 150px;" >';
+
+                            echo '</div>';
+
+
+                            echo ' </div>
+                        </div>';
+
+
+                        }
+
+
+                        ?>
+
+                        <!--                        -->
+
+
+                        <!--                   -->
                     </div>
                 </div>
 

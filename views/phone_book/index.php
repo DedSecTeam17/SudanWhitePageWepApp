@@ -19,6 +19,8 @@ require 'views/partials/nav_bar.php'
         <div class="col-md-6 offset-md-3">
             <a class="btn btn-outline-info m-2"
                href="<?php echo Route::to('create', 'PhoneBookController', null, false) ?>">CREATE NEW CONTACT</a>
+
+
             <table class="table table-hover">
                 <thead>
                 <tr>
@@ -33,29 +35,39 @@ require 'views/partials/nav_bar.php'
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>
-                        <a class="btn btn-outline-info"
-                           href="<?php echo Route::to('show', 'PhoneBookController', 1, true) ?>"> Show</a>
-                    </td>
-                    <td>
-                        <a class="btn btn-outline-info"
-                           href="<?php echo Route::to('index', 'PhoneBookImagesController', 1, true) ?>"> Mange images</a>
-                    </td>
-                    <td>
-                        <a class="btn btn-outline-primary"
-                           href="<?php echo Route::to('edit', 'PhoneBookController', 1, true) ?>">Edit</a>
-                    </td>
-                    <td>
-                        <a class="btn btn-outline-danger"
-                           href="<?php echo Route::to('delete', 'PhoneBookController', 1, true) ?>">Delete</a>
-                    </td>
 
-                </tr>
+
+                <?php
+
+                foreach ($data as $contact) {
+
+                    echo ' <tr>';
+                    echo ' <td>' . $contact->name . '</td>';
+                    echo ' <td>' . $contact->number . '</td>';
+                    echo ' <td>' . $contact->job . '</td>';
+                    echo ' <td>' . $contact->location_address . '</td>';
+
+
+                    echo ' <td><a class="btn btn-outline-info" href="' . Route::to('show', 'PhoneBookController', $contact->id, true) . '" >show</a></td>';
+
+                    echo '<form method="post"  action="'.Route::to('index', 'PhoneBookImagesController', null, false).'">
+                    
+                 
+                    ';
+                    echo ' <td><button type="submit"  class="btn btn-outline-secondary" >Manage Images</button></td>';
+                    echo  '<input name="id" hidden value="'.$contact->id.'">';
+                    echo '</form>';
+
+
+                    echo ' <td><a  class="btn btn-outline-primary" href="' . Route::to('edit', 'PhoneBookController', $contact->id, true) . '" >Edit</a></td>';
+                    echo ' <td><a  class="btn btn-outline-danger" href="' . Route::to('delete', 'PhoneBookController', $contact->id, true) . '" >Delete</a></td>';
+
+
+                    echo '  </tr>';
+
+                }
+
+                ?>
 
 
                 </tbody>

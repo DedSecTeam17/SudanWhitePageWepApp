@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29bfda2b-88ac-4dab-9ec2-a1334f8a1fdf" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/views/phone_book_images/show.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/1544294089download.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/1544294143211822_handsome-man-hairstyle-eminem-2560x1440-hd-wallpapers-and-free_2560x1440_h.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/1544294156211822_handsome-man-hairstyle-eminem-2560x1440-hd-wallpapers-and-free_2560x1440_h.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/team.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/profile/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/profile/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/PhoneBookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PhoneBookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/PhoneBookImagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PhoneBookImagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/1574363710download.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/phone_book/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/phone_book/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/phone_book/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/phone_book_images/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book_images/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,14 +55,7 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="sudan_white_page: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="user: table" type="dbc44a63:MariaImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="sudan_white_page: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="user_profile: table" type="dbc44a63:MariaImplModel$Table" />
+        <item name="phone_book_images: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -92,17 +86,17 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.smarty" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\projects\mvc_application\libs" />
-      <recent name="C:\xampp\htdocs\projects\mvc_application\config" />
-      <recent name="C:\xampp\htdocs\projects\mvc_application\public\img" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\projects\mvc_application\views\phone" />
       <recent name="C:\xampp\htdocs\projects\mvc_application\public\xml_data" />
       <recent name="C:\xampp\htdocs\projects\mvc_application\models" />
       <recent name="C:\xampp\htdocs\projects\mvc_application\models\data" />
       <recent name="C:\xampp\htdocs\projects\mvc_application\controllers\img" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\projects\mvc_application\libs" />
+      <recent name="C:\xampp\htdocs\projects\mvc_application\config" />
+      <recent name="C:\xampp\htdocs\projects\mvc_application\public\img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -173,7 +167,9 @@
       <workItem from="1573750216627" duration="7297000" />
       <workItem from="1573820206438" duration="4957000" />
       <workItem from="1574273875330" duration="6986000" />
-      <workItem from="1574350155082" duration="11884000" />
+      <workItem from="1574350155082" duration="12591000" />
+      <workItem from="1574449269294" duration="6610000" />
+      <workItem from="1574494303366" duration="5194000" />
     </task>
     <servers />
   </component>
