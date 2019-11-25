@@ -1,4 +1,7 @@
 <?php
+require 'models/PhoneBookImages.php';
+require 'models/Profile.php';
+require 'models/User.php';
 
 
 class PhoneBookController extends Controller
@@ -6,7 +9,7 @@ class PhoneBookController extends Controller
     public function __construct()
     {
         Parent::__construct('PhoneBook');
-        $this->middleWare('Auth');
+        $this->middleWare('Auth' , ["show"]);
 
     }
 
@@ -17,7 +20,7 @@ class PhoneBookController extends Controller
         $contacts = new PhoneBook();
 
         $data = $contacts->select(['*'], null)->where([array("user_id", "=", Auth::getInstance()->user()->id)])->
-        orderBy('id','desc')->getAll();
+        orderBy('id', 'desc')->getAll();
 
 
         return $this->view->render('phone_book.index', $data);
@@ -29,9 +32,35 @@ class PhoneBookController extends Controller
 
     }
 
-    public function show($id)
+    public function show()
     {
-        return $this->view->render('phone_book.show');
+
+
+
+
+//       echo  $new;
+
+        $id = $this->getGetRequestData('id');
+        $contact = new PhoneBook();
+        $profile = new Profile();
+        $user = new User();
+        $images = new PhoneBookImages();
+
+
+        $selectedPhoneBook = $contact->find($id);
+        $selectedUser = $user->find($selectedPhoneBook->user_id);
+
+        $selectedProfile = $profile->select(['*'], null)->where([array('user_id', '=', $selectedPhoneBook->user_id)])->get();
+        $selectedImages = $images->select(['image_url'], null)->where([array('phone_book_id', '=', $selectedPhoneBook->id)])->getAll();
+
+
+        return $this->view->render('phone_book.show', [
+            "profile" => $selectedProfile,
+            "images" => $selectedImages,
+            "contact" => $selectedPhoneBook,
+            "user" => $selectedUser,
+            "is_current_user" =>!empty(Auth::getInstance()->user()) ?  Auth::getInstance()->user()->id == $selectedPhoneBook->user_id : false
+        ]);
 
     }
 
@@ -42,8 +71,8 @@ class PhoneBookController extends Controller
         $contact->columns['number'] = $this->getPostRequestData('number');
         $contact->columns['job'] = $this->getPostRequestData('job');
         $contact->columns['location_address'] = $this->getPostRequestData('location_address');
-        $contact->columns['location_lat'] =  $this->getPostRequestData('lat');
-        $contact->columns['location_long'] =  $this->getPostRequestData('lng');
+        $contact->columns['location_lat'] = $this->getPostRequestData('lat');
+        $contact->columns['location_long'] = $this->getPostRequestData('lng');
         $contact->columns['user_id'] = Auth::getInstance()->user()->id;
 
 
@@ -75,13 +104,12 @@ class PhoneBookController extends Controller
         $updatedContact = new PhoneBook();
 
 
-
         $updatedContact->columns['name'] = $this->getPostRequestData('name');
         $updatedContact->columns['number'] = $this->getPostRequestData('number');
         $updatedContact->columns['job'] = $this->getPostRequestData('job');
         $updatedContact->columns['location_address'] = $this->getPostRequestData('location_address');
-        $updatedContact->columns['location_lat'] =  $this->getPostRequestData('lat');
-        $updatedContact->columns['location_long'] =  $this->getPostRequestData('lng');
+        $updatedContact->columns['location_lat'] = $this->getPostRequestData('lat');
+        $updatedContact->columns['location_long'] = $this->getPostRequestData('lng');
         $updatedContact->columns['user_id'] = Auth::getInstance()->user()->id;
         $updatedContact->update()->where([array("id", "=", $oldContact->id)])->execute();
 
@@ -94,7 +122,30 @@ class PhoneBookController extends Controller
     {
 
         $instance = new PhoneBook();
+
+
+        $images = new PhoneBookImages();
+
+
+        $selectedImages = $images->select(['*'], null)->where([array('phone_book_id', '=', $id)])->getAll();
+
+
+//        print_r($selectedImages);
+
+
+        foreach ($selectedImages as $image) {
+            unlink("public/img/contacts_images/" . $image->image_url);
+        }
+//
+
+
+        $images->delete()->where([array('phone_book_id', '=', $id)])->execute();
+
+//        delete all related images from table
+//        then delete contact
         $instance->delete()->where([array("id", "=", $id)])->execute();
+
+//
         return Route::redirectTo(
             Route::to('index', 'PhoneBookController', null, false));
     }

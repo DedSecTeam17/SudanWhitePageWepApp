@@ -26,18 +26,55 @@
             }
         }
 
-        public function middleWare($user_type)
-        {
-            if ($user_type==='Auth')
-            {
-                if (!Auth::getInstance()->isAuthenticated()) {
-                    Route::redirectTo(Route::to('index', 'HomeController', null, false));
-                }
-            }else if ('quest')
-            {
-                Route::redirectTo(Route::to('index', 'HomeController', null, false));
 
+
+        public function middleWare($user_type,  $except = array())
+        {
+
+
+
+            $url =  $_SERVER['REQUEST_URI'];
+
+
+            if (!empty($except))
+            {
+             foreach ($except as $view)    {
+
+                 if (!stripos($url, $view)) {
+                     // string contains characters other than |
+                     if ($user_type==='Auth')
+                     {
+                         if (!Auth::getInstance()->isAuthenticated()) {
+                             Route::redirectTo(Route::to('index', 'HomeController', null, false));
+                         }
+                     }else if ('quest')
+                     {
+                         Route::redirectTo(Route::to('index', 'HomeController', null, false));
+
+                     }
+                 }
+             }
+
+
+            }   else {
+                if ($user_type==='Auth')
+                {
+                    if (!Auth::getInstance()->isAuthenticated()) {
+                        Route::redirectTo(Route::to('index', 'HomeController', null, false));
+                    }
+                }else if ('quest')
+                {
+                    Route::redirectTo(Route::to('index', 'HomeController', null, false));
+
+                }
             }
+
+
+
+
+
+
+
         }
 
 

@@ -2,14 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29bfda2b-88ac-4dab-9ec2-a1334f8a1fdf" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/views/phone_book_images/show.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/contacts_images/1574707192hero1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/contacts_images/1574707200NYstatueofliberty.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/contacts_images/1574707212photo-1536031696538-924fe11c7037.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/contacts_images/1574707228NYstatueofliberty.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/contacts_images/1574710081photo-1536031696538-924fe11c7037.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/contacts_images/1574710090aa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/contacts_images/1574710385796838.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/phone_book_images/create.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/pathes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/pathes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/PhoneBookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PhoneBookController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/PhoneBookImagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PhoneBookImagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/1574363710download.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/phone_book/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/phone_book/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/Auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/1574495499a.jpg.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/1574712310a.jpg.jfif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574495650a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574495693a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574495698download.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574496209a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574496216a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574496263a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574496487a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574496659download.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574496664a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574496668Untitled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574498829a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/15744989621102013.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499032a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499085a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499091a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499102a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499127a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499175a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499188a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499194a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499206a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499380a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499387a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499538a.jpg.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499547796833.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/contacts_images/1574710381796833.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499597796833.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499617796833.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499644796833.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499654796833.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574499669download.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/views/phone_book/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/phone_book/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book/show.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/phone_book_images/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book_images/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,7 +95,28 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="sudan_white_page: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="phone_book: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sudan_white_page: schema" type="ebfa3cd1:MariaImplModel$Schema" />
         <item name="phone_book_images: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sudan_white_page: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="user: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sudan_white_page: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="user_profile: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -169,7 +230,9 @@
       <workItem from="1574273875330" duration="6986000" />
       <workItem from="1574350155082" duration="12591000" />
       <workItem from="1574449269294" duration="6610000" />
-      <workItem from="1574494303366" duration="5194000" />
+      <workItem from="1574494303366" duration="5455000" />
+      <workItem from="1574535398358" duration="724000" />
+      <workItem from="1574696563449" duration="12357000" />
     </task>
     <servers />
   </component>

@@ -32,10 +32,11 @@ require 'views/partials/nav_bar.php'
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            <p><i class="fas fa-id-card"></i> Name</p>
-                            <p><i class="fas fa-mobile"></i> 09026333898</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Address</p>
-                            <p><i class="fas fa-briefcase"></i> Job</p>
+                            <p><i class="fas fa-id-card"></i> <?php echo $data['contact']->name ?></p>
+                            <p><i class="fas fa-mobile"></i> <?php echo $data['contact']->number ?></p>
+                            <p><i class="fas fa-map-marker-alt"></i> <?php echo $data['contact']->location_address ?>
+                            </p>
+                            <p><i class="fas fa-briefcase"></i> <?php echo $data['contact']->job ?></p>
                         </div>
                     </div>
                 </div>
@@ -46,28 +47,60 @@ require 'views/partials/nav_bar.php'
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img src="https://via.placeholder.com/600/771796" width="50" height="50"
-                                         class="rounded-circle">
+
+
+                                    <?php
+
+                                    echo '<img src="' . '../public/img/' . $data['profile']->image_url . '"  width="50" height="50"
+                                         class="rounded-circle" >';
+
+
+                                    ?>
+
                                 </div>
 
                                 <div class="col-md-9">
-                                    <p style="font-size: 12px">Mohammed Elamin</p>
-                                    <p style="font-size: 12px">melamin100@yahoo.com</p>
+                                    <p style="font-size: 12px"><?php echo $data['user']->name ?></p>
+                                    <p style="font-size: 11px"><?php echo $data['user']->email ?></p>
                                 </div>
                             </div>
 
-                            <div class="row m-1">
-                                <a  href="<?php echo Route::to('edit', 'PhoneBookController', 1, true) ?>"  class="btn btn-outline-info btn-block"><i class="fas fa-edit"></i></a>
 
-                            </div>
-                            <div class="row m-1">
-                                <a  href="<?php echo Route::to('delete', 'PhoneBookController', 1, true) ?>"  class="btn btn-outline-danger btn-block"><i class="fas fa-trash"></i></a>
-                            </div>
+                            <?php
 
-                            <div class="row m-1">
-                                <a href="<?php echo Route::to('index', 'PhoneBookImagesController', 1, true) ?>"
-                                   class="btn btn-outline-dark btn-block"><i class="fas fa-image"></i></a>
-                            </div>
+                            if ($data['is_current_user']) {
+
+                                ?>
+                                <div class="row m-1">
+                                    <div class="col-md-12">
+                                        <a href="<?php echo Route::to('edit', 'PhoneBookController', $data['contact']->id, true) ?>"
+                                           class="btn btn-outline-info btn-block"><i class="fas fa-edit"></i></a>
+                                    </div>
+
+                                </div>
+                                <div class="row m-1">
+
+
+                                    <div class="col-md-12">
+
+                                        <form method="get"
+                                              action="<?php echo Route::to('index', 'PhoneBookImagesController', null, false) ?>">
+
+                                            <input hidden name="id" value="<?php echo $data['contact']->id ?>">
+
+
+                                            <button type="submit" class="btn btn-outline-dark btn-block "><i
+                                                        class="fas fa-image"></i></button>
+
+
+                                        </form>
+                                    </div>
+
+
+                                </div>
+
+
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -82,12 +115,20 @@ require 'views/partials/nav_bar.php'
                 <div class="col-md-6">
 
                     <div class="row">
-                        <div class="col-md-3 mt-1">
-                            <img src="https://via.placeholder.com/600/771796" style="width: 100%; height: 100%">
-                        </div>
-                        <div class="col-md-3  mt-1">
-                            <img src="https://via.placeholder.com/600/771796" style="width: 100%; height: 150px">
-                        </div>
+
+
+                        <?php
+
+
+                        foreach ($data['images'] as $image) {
+                            echo '   <div class="col-md-4 mt-1">';
+                            echo '<img src="' . '../public/img/contacts_images/' . $image->image_url . '"  style= "width  : 300px; height : 200px" class="img-fluid rounded " >';
+                            echo '  </div>';
+                        }
+
+
+                        ?>
+
 
                     </div>
 
@@ -111,12 +152,53 @@ require 'views/partials/footer.php'
 
 
 <script>
+    var lat = "<?php echo $data["contact"]->location_lat?>";
+    var lng = "<?php echo $data["contact"]->location_long?>";
+
+
+    console.log(lat)
+
+    console.log(lng)
+
+    var map
+
+
+    var markers = [];
+
     function myMap() {
+
+
         var mapProp = {
-            center: new google.maps.LatLng(51.508742, -0.120850),
+            center: new google.maps.LatLng(lat, lng),
             zoom: 17,
         };
-        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        placeMarker(new google.maps.LatLng(lat, lng));
+
+
+    }
+
+    function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(map);
+        }
+    }
+
+    function clearMarkers() {
+        setMapOnAll(null);
+    }
+
+    function deleteMarkers() {
+        clearMarkers();
+        markers = [];
+    }
+
+    function placeMarker(location) {
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+        markers.push(marker);
     }
 
 

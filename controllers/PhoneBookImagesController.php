@@ -1,6 +1,7 @@
 <?php
 
 
+
 class PhoneBookImagesController
     extends Controller
 {
@@ -15,7 +16,7 @@ class PhoneBookImagesController
     public function index()
     {
 
-        $phone_book_id = $this->getPostRequestData('id');
+        $phone_book_id = $this->getGetRequestData('id');
         $images = new PhoneBookImages();
 
         $data = $images->select(['*'], null)->where([array("phone_book_id", "=", $phone_book_id)])->
@@ -29,14 +30,20 @@ class PhoneBookImagesController
     }
 
 
+    public function create()
+    {
+
+        return $this->view->render('phone_book_images.create');
+    }
+
+
     public function store()
     {
 
-        $phone_book_id=     $this->getPostRequestData('id');
+        $phone_book_id = $this->getPostRequestData('id');
         $image = new PhoneBookImages();
 
         $UploadedFileName = $_FILES['image']['name'];
-
 
 
         if ($UploadedFileName != '') {
@@ -59,13 +66,18 @@ class PhoneBookImagesController
         $images = new PhoneBookImages();
 
 
-        $data = $images->select(['*'], null)->where([array("phone_book_id", "=", $phone_book_id)])->
-        orderBy('id', 'desc')->getAll();
 
-        return $this->view->render('phone_book_images.index', [
-            "id" => $phone_book_id,
-            "images" => $data
-        ]);
+
+
+
+
+
+
+
+        return Route::redirectToWithPrams(
+            Route::to('index', 'PhoneBookImagesController', null, false) , $phone_book_id);
+
+
 
 
 //
@@ -73,9 +85,31 @@ class PhoneBookImagesController
     }
 
 
-    public function delete()
+    public function delete($id)
     {
-        $phone_book_id=     $this->getPostRequestData('id');
+        $phone_book_id = $this->getGetRequestData('contact_id');
+
+        $image = new PhoneBookImages();
+
+        $selectedImages = $image->find($id);
+
+        unlink("public/img/contacts_images/" . $selectedImages->image_url);
+        // get related images
+
+        $image->delete()->where([array("id", "=", $id)])->execute();
+
+//        $data = $image->select(['*'], null)->where([array("phone_book_id", "=", $phone_book_id)])->
+//        orderBy('id', 'desc')->getAll();
+//
+//        return $this->view->render('phone_book_images.index', [
+//            "id" => $phone_book_id,
+//            "images" => $data
+//        ]);
+
+
+        return Route::redirectToWithPrams(
+            Route::to('index', 'PhoneBookImagesController', null, false) , $phone_book_id);
+
 
     }
 

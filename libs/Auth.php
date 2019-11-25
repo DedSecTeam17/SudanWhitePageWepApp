@@ -60,7 +60,8 @@
                 require_once 'models/User.php';
                 $model = new User();
 
-                $session_key = self::get('id')->id;
+
+                $session_key = !empty(self::get('id')) ?  self::get('id')->id : 0;
 
                 return $model->find($session_key);
 

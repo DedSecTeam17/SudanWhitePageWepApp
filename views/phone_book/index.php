@@ -48,14 +48,18 @@ require 'views/partials/nav_bar.php'
                     echo ' <td>' . $contact->location_address . '</td>';
 
 
-                    echo ' <td><a class="btn btn-outline-info" href="' . Route::to('show', 'PhoneBookController', $contact->id, true) . '" >show</a></td>';
+                    echo ' <td>
+ 
+                         <form method="get" action="'. Route::to('show', 'PhoneBookController', null, false).'">
+                         <input hidden name="id" value="'.$contact->id.'">
+                            <button class="btn btn-outline-info"  type="submit" >show</button> </form></td>';
 
-                    echo '<form method="post"  action="'.Route::to('index', 'PhoneBookImagesController', null, false).'">
+                    echo '<form method="get"  action="' . Route::to('index', 'PhoneBookImagesController', null, false) . '">
                     
                  
                     ';
                     echo ' <td><button type="submit"  class="btn btn-outline-secondary" >Manage Images</button></td>';
-                    echo  '<input name="id" hidden value="'.$contact->id.'">';
+                    echo '<input name="id" hidden value="' . $contact->id . '">';
                     echo '</form>';
 
 

@@ -100,7 +100,7 @@ class ProfileController
             $TargetPath = time() . $UploadedFileName;
             $up = move_uploaded_file($_FILES['profile_image']['tmp_name'], $upload_directory . $TargetPath);
             if ($up) {
-                echo  "uploaded ";
+//                echo  "uploaded ";
                 $profile->columns['image_url'] = $TargetPath;
             }else {
                 echo  "not uploaded ";
