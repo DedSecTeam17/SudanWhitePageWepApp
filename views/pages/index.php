@@ -14,94 +14,64 @@ require 'views/partials/nav_bar.php'
 <div class="container-fluid">
 
 
-    <div class="row m-1">
 
-        <div class="col-md-2 mt-1">
-            <div class="card">
-                <div class="card-body">
 
-                    <div id="googleMap" style="width:100%;height:200px;">
+    <div class="row ">
+
+
+        <?php
+
+
+        foreach ($data as $contact) {
+
+            ?>
+
+
+            <div class="  col-md-3  mt-1">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="row mb-2 mt-2">
+                            <div class="col-3">
+
+
+                                <?php
+
+                                echo '<img src="' . '../public/img/' . $contact->author_image . '"  width="50" height="50"
+                                         class="rounded-circle" >';
+
+
+                                ?>
+
+                            </div>
+
+                            <div class="col-9 mt-2">
+                                <p style="font-size: 16px; "><?php echo $contact->author_name ?></p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+
+                        <p><i class="fas fa-id-card"></i>  <?php echo $contact->name?></p>
+                        <p><i class="fas fa-mobile"></i>  <?php echo $contact->number ?></p>
+                    </div>
+
+                    <div class="card-footer">
+
+                        <form action="<?php echo Route::to('show', 'PhoneBookController', null, false) ?>" method="get">
+                            <input hidden name="id" value="<?php echo $contact->id ?>">
+                            <button type="submit" class="btn btn-outline-info btn-block">More details</button>
+                        </form>
+
 
                     </div>
 
 
-                    <p>Name</p>
-                    <p>Phone Number</p>
-
                 </div>
-
-                <div class="card-footer">
-                    <a href="<?php echo Route::to('show', 'PhoneBookController', 1, true) ?>"
-                       class="btn btn-outline-info btn-block">More details</a>
-                </div>
-
-
             </div>
-        </div>
-        <div class="col-md-2 mt-1">
-            <div class="card">
-                <div class="card-body">
 
-                    <div id="googleMap" style="width:100%;height:200px;">
-
-                    </div>
-
-
-                    <p>Name</p>
-                    <p>Phone Number</p>
-
-                </div>
-
-                <div class="card-footer">
-                    <button class="btn btn-outline-info btn-block">More details</button>
-                </div>
-
-
-            </div>
-        </div>
-        <div class="col-md-2 mt-1">
-            <div class="card">
-                <div class="card-body">
-
-                    <div id="googleMap" style="width:100%;height:200px;">
-
-                    </div>
-
-
-                    <p>Name</p>
-                    <p>Phone Number</p>
-
-                </div>
-
-                <div class="card-footer">
-                    <button class="btn btn-outline-info btn-block">More details</button>
-                </div>
-
-
-            </div>
-        </div>
-        <div class="col-md-2 mt-1">
-            <div class="card">
-                <div class="card-body">
-
-                    <div id="googleMap" style="width:100%;height:200px;">
-
-                    </div>
-
-
-                    <p>Name</p>
-                    <p>Phone Number</p>
-
-                </div>
-
-                <div class="card-footer">
-                    <button class="btn btn-outline-info btn-block">More details</button>
-                </div>
-
-
-            </div>
-        </div>
-
+        <?php } ?>
 
     </div>
 

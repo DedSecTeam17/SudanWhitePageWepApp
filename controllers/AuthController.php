@@ -48,7 +48,7 @@
                     Auth::getInstance()->authenticateNewUser($id);
 
                     Route::redirectTo(
-                        Route::to('home', 'HomeController', null, false));
+                        Route::to('index', 'HomeController', null, false));
                 }
 
             } else {
@@ -87,7 +87,7 @@
         {
             Auth::getInstance()->logout();
             return Route::redirectTo(
-                Route::to('index', 'HomeController', null, false));
+                Route::to('getLogin', 'AuthController', null, false));
 
         }
 

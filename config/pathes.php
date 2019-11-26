@@ -21,7 +21,6 @@ class Route
 
     static function redirectTo($location)
     {
-        header("Content-Type: image/jpeg");
         return header('Location: ' . $location);
 
     }

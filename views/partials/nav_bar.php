@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar  navbar-expand-lg navbar-dark bg-dark ">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,32 +10,33 @@
 
 
             <!--            --><?php
-            $url = "http" . (($_SERVER['SERVER_PORT'] == 443) ? "s" : "") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+            $req_uri = $_SERVER['REQUEST_URI'];
+
 
 
             ?>
 
 
-            <li <?php if ($url === "http://localhost/server_projects/sudan_white_page/HomeController/index") { ?>  class=" nav-item active"   <?php } else { ?>      class="nav-item"   <?php } ?> >
+            <li <?php if ($req_uri === "/server_projects/sudan_white_page/HomeController/index") { ?>  class=" nav-item active"   <?php } else { ?>      class="nav-item"   <?php } ?> >
                 <a class="nav-link" href="<?php echo Route::to('index', 'HomeController', null, false) ?>">Home</a>
             </li>
 
-            <li <?php if ($url === "http://localhost/server_projects/sudan_white_page/HomeController/ContactUs") { ?>  class=" nav-item active"   <?php } else { ?>      class="nav-item"   <?php } ?>>
+            <li <?php if ($req_uri === "/server_projects/sudan_white_page/HomeController/ContactUs") { ?>  class=" nav-item active"   <?php } else { ?>      class="nav-item"   <?php } ?>>
                 <a class="nav-link" href="<?php echo Route::to('ContactUs', 'HomeController', null, false) ?>">Contact
                     Us</a>
             </li>
 
 
-            <li <?php if ($url === "http://localhost/server_projects/sudan_white_page/HomeController/about") { ?>  class=" nav-item active"   <?php } else { ?>      class="nav-item"   <?php } ?>>
+            <li <?php if ($req_uri === "/server_projects/sudan_white_page/HomeController/about") { ?>  class=" nav-item active"   <?php } else { ?>      class="nav-item"   <?php } ?>>
                 <a class="nav-link" href="<?php echo Route::to('about', 'HomeController', null, false) ?>">About Us</a>
             </li>
 
         </ul>
 
 
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+        <form class="form-inline my-2 my-lg-0" method="get" action="<?php echo Route::to('index', 'HomeController', null, false) ?>">
+            <input name="q" class="form-control mr-sm-2" type="search" placeholder="Search  by contact name" aria-label="Search  by contact name">
+            <button  class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
         </form>
 
 

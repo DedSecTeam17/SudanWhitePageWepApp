@@ -120,6 +120,8 @@
          */
         public function getAll()
         {
+
+
             $stmt = $this->pdo->prepare($this->builded_query);
             $stmt->execute($this->query_columns_place_holder_array);
             $result = $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -165,9 +167,9 @@
                 $index = $values[0];
                 $this->query_columns_place_holder_array[$index] = $values[2];
                 if (isset($values[3]))
-                    $where_query .= "\t" . $values[0] . $values[1] . ' :' . $values[0] . "\t" . $values[3];
+                    $where_query .= "\t" . $values[0] . ' '.$values[1] . ' :' . $values[0] . "\t" . $values[3];
                 else
-                    $where_query .= "\t" . $values[0] . $values[1] . ' :' . $values[0];
+                    $where_query .= "\t" . $values[0] . ' '.$values[1] . ' :' . $values[0];
             }
             $this->builded_query .= $where_query;
 

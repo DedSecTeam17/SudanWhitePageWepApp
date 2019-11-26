@@ -101,7 +101,7 @@
 
         public  function  getGetRequestData($filed_name){
             $sanitizer = new Sanitizer();
-            return $sanitizer->sanitizeString($_GET[$filed_name]);
+            return  !empty($_GET[$filed_name]) ?  $sanitizer->sanitizeString($_GET[$filed_name]) : null;
         }
 
 
