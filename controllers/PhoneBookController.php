@@ -9,7 +9,7 @@ class PhoneBookController extends Controller
     public function __construct()
     {
         Parent::__construct('PhoneBook');
-        $this->middleWare('Auth' , ["show"]);
+        $this->middleWare('Auth', ["show"]);
 
     }
 
@@ -36,8 +36,6 @@ class PhoneBookController extends Controller
     {
 
 
-
-
 //       echo  $new;
 
         $id = $this->getGetRequestData('id');
@@ -59,28 +57,49 @@ class PhoneBookController extends Controller
             "images" => $selectedImages,
             "contact" => $selectedPhoneBook,
             "user" => $selectedUser,
-            "is_current_user" =>!empty(Auth::getInstance()->user()) ?  Auth::getInstance()->user()->id == $selectedPhoneBook->user_id : false
+            "is_current_user" => !empty(Auth::getInstance()->user()) ? Auth::getInstance()->user()->id == $selectedPhoneBook->user_id : false
         ]);
 
     }
 
     public function store()
     {
-        $contact = new PhoneBook();
-        $contact->columns['name'] = $this->getPostRequestData('name');
-        $contact->columns['number'] = $this->getPostRequestData('number');
-        $contact->columns['job'] = $this->getPostRequestData('job');
-        $contact->columns['location_address'] = $this->getPostRequestData('location_address');
-        $contact->columns['location_lat'] = $this->getPostRequestData('lat');
-        $contact->columns['location_long'] = $this->getPostRequestData('lng');
-        $contact->columns['user_id'] = Auth::getInstance()->user()->id;
 
 
-        $contact->insert();
+        $validation_result = $this->validator->validate([
+            $this->getPostRequestData('name') => 'string|min:1',
+            $this->getPostRequestData('number') => 'number|min:10|max:10',
+            $this->getPostRequestData('job') => 'string|min:1',
+            $this->getPostRequestData('location_address') => 'string',
+            $this->getPostRequestData('lat') => 'float|min:1',
+            $this->getPostRequestData('lng') => 'float|min:1',
+        ] , ['name','Phone number','job','location_address','lat','lng'])->execute();
 
 
-        return Route::redirectTo(
-            Route::to('index', 'PhoneBookController', null, false));
+        if ($validation_result->getisValid()) {
+
+            $contact = new PhoneBook();
+            $contact->columns['name'] = $this->getPostRequestData('name');
+            $contact->columns['number'] = $this->getPostRequestData('number');
+            $contact->columns['job'] = $this->getPostRequestData('job');
+            $contact->columns['location_address'] = $this->getPostRequestData('location_address');
+            $contact->columns['location_lat'] = $this->getPostRequestData('lat');
+            $contact->columns['location_long'] = $this->getPostRequestData('lng');
+            $contact->columns['user_id'] = Auth::getInstance()->user()->id;
+
+
+            $contact->insert();
+
+
+            return Route::redirectTo(
+                Route::to('index', 'PhoneBookController', null, false));
+
+        } else {
+
+            echo  $validation_result->getMessage();
+            return $this->view->render('phone_book.create', $validation_result->getMessage());
+
+        }
 
     }
 

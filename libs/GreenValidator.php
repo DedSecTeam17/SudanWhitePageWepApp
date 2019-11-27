@@ -54,7 +54,7 @@
             return strlen($data) >= $min ? true : false;
         }
 
-        public function validate($requests = array())
+        public function validate($requests = array() , $labels=array())
         {
             $keys = array_keys($requests);
             $values = array_values($requests);
@@ -65,38 +65,39 @@
             for ($i = 0; $i < sizeof($keys); $i++) {
 //    data came from form need to validated
                 $data = $keys[$i];
+                $hints_lab=$labels[$i];
                 $arr = explode('|', $values[$i]);
                 for ($z = 0; $z < sizeof($arr); $z++) {
                     if (preg_match('/min/', $arr[$z])) {
                         $min = explode(':', $arr[$z]);
                         $min_value = $min[1];
                         $this->min($data, $min_value)
-                            ?: array_push($this->validation_result, $data . "\t" . ' must be at least equal or greater then ' . $min_value);
+                            ?: array_push($this->validation_result, $hints_lab . "\t" . ' must be at least equal or greater then ' . $min_value);
                     } else if (preg_match('/max/', $arr[$z])) {
                         $max = explode(':', $arr[$z]);
                         $max_value = $max[1];
                         $this->max($data, $max_value)
                             ?:
-                            array_push($this->validation_result, $data . "\t" . ' must be at least equal or less then ' . $max_value);
+                            array_push($this->validation_result, $hints_lab . "\t" . ' must be at least equal or less then ' . $max_value);
 
                     }
 //                    email validation
                     if ($arr[$z] === 'email') {
                         $this->isEmail($data)
-                            ?: array_push($this->validation_result, $data . "\t" . ' invalid email');
+                            ?: array_push($this->validation_result, $hints_lab . "\t" . ' invalid email');
 
                     } //                    string validation
                     else if ($arr[$z] === 'string') {
                         $this->isStringOnly($data)
-                            ?: array_push($this->validation_result, $data . "\t" . 'invalid string');
+                            ?: array_push($this->validation_result, $hints_lab . "\t" . 'invalid string');
                     } //                    number s validations
                     else if ($arr[$z] === 'number') {
                         $this->isNumber($data)
-                            ?: array_push($this->validation_result, $data . "\t" . 'invalid number');
+                            ?: array_push($this->validation_result, $hints_lab . "\t" . 'invalid number');
                     } //                    float validation
                     else if ($arr[$z] === 'float') {
                         $this->isFloat($data)
-                            ?: array_push($this->validation_result, $data . "\t" . 'invalid float');
+                            ?: array_push($this->validation_result, $hints_lab . "\t" . 'invalid float');
                     }
                 }
 

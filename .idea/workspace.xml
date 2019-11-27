@@ -3,14 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="29bfda2b-88ac-4dab-9ec2-a1334f8a1fdf" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/pathes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/pathes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/SoftMapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/SoftMapper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/PhoneBookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PhoneBookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/GreenValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/GreenValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/messages/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/messages/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/auth/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/auth/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/auth/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/auth/register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/partials/headers.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/headers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partials/nav_bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/nav_bar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/phone_book/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book/create.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +186,8 @@
       <workItem from="1574494303366" duration="5455000" />
       <workItem from="1574535398358" duration="724000" />
       <workItem from="1574696563449" duration="12768000" />
-      <workItem from="1574790160758" duration="7792000" />
+      <workItem from="1574790160758" duration="8528000" />
+      <workItem from="1574880815364" duration="6139000" />
     </task>
     <servers />
   </component>

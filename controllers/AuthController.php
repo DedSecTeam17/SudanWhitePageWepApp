@@ -35,7 +35,7 @@
             $validation_result = $this->validator->validate([
                 $this->getPostRequestData('email') => 'email',
                 $this->getPostRequestData('password') => 'min:6|max:12'
-            ])->execute();
+            ] , ['email' , 'password'])->execute();
 
             if ($validation_result->getisValid()) {
                 $user = new User();
@@ -49,6 +49,9 @@
 
                     Route::redirectTo(
                         Route::to('index', 'HomeController', null, false));
+                }else {
+                    $error = "Email or password wrong";
+                    return $this->view->render('auth.login', $error);
                 }
 
             } else {
@@ -61,24 +64,31 @@
         {
             $validation_result = $this->validator->validate([
                 $this->getPostRequestData('email') => 'email',
-                $this->getPostRequestData('name') => 'string|min:5|max:20',
-                $this->getPostRequestData('password') => 'min:6|max:12'
-            ])->execute();
+                $this->getPostRequestData('name') => 'string|min:6',
+                $this->getPostRequestData('password') => 'string|min:6'
+            ] ,['email' ,'name' ,'password'])->execute();
 
             if ($validation_result->getisValid()) {
                 $user = new User();
                 $user->columns['name'] = $this->getPostRequestData('name');
                 $user->columns['email'] = $this->getPostRequestData('email');
                 $user->columns['password'] = Hash::passwordHashing($this->getPostRequestData('password'));
-                $user->insert();
+               if ( $user->insert()) {
+                   Route::redirectTo(
+                       Route::to('getLogin', 'AuthController', null, false));
+               }else {
+                               return $this->view->render('auth.register', "Email already used");
 
-                Route::redirectTo(
-                    Route::to('getLogin', 'AuthController', null, false));
+               }
+
+
             } else {
-                echo $validation_result->getMessage();
+//                echo $validation_result->getMessage();
+                return $this->view->render('auth.register' , $validation_result->getMessage());
+
+
             }
 
-//            return $this->view->render('pages.index');
 
         }
 
