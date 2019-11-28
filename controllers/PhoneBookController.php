@@ -73,7 +73,7 @@ class PhoneBookController extends Controller
             $this->getPostRequestData('location_address') => 'string',
             $this->getPostRequestData('lat') => 'float|min:1',
             $this->getPostRequestData('lng') => 'float|min:1',
-        ] , ['name','Phone number','job','location_address','lat','lng'])->execute();
+        ], ['name', 'Phone number', 'job', 'location_address', 'lat', 'lng'])->execute();
 
 
         if ($validation_result->getisValid()) {
@@ -96,7 +96,6 @@ class PhoneBookController extends Controller
 
         } else {
 
-            echo  $validation_result->getMessage();
             return $this->view->render('phone_book.create', $validation_result->getMessage());
 
         }
@@ -123,18 +122,34 @@ class PhoneBookController extends Controller
         $updatedContact = new PhoneBook();
 
 
-        $updatedContact->columns['name'] = $this->getPostRequestData('name');
-        $updatedContact->columns['number'] = $this->getPostRequestData('number');
-        $updatedContact->columns['job'] = $this->getPostRequestData('job');
-        $updatedContact->columns['location_address'] = $this->getPostRequestData('location_address');
-        $updatedContact->columns['location_lat'] = $this->getPostRequestData('lat');
-        $updatedContact->columns['location_long'] = $this->getPostRequestData('lng');
-        $updatedContact->columns['user_id'] = Auth::getInstance()->user()->id;
-        $updatedContact->update()->where([array("id", "=", $oldContact->id)])->execute();
+        $validation_result = $this->validator->validate([
+            $this->getPostRequestData('name') => 'string|min:1',
+            $this->getPostRequestData('number') => 'number|min:10|max:10',
+            $this->getPostRequestData('job') => 'string|min:1',
+            $this->getPostRequestData('location_address') => 'string',
+            $this->getPostRequestData('lat') => 'float|min:1',
+            $this->getPostRequestData('lng') => 'float|min:1',
+        ], ['name', 'Phone number', 'job', 'location_address', 'lat', 'lng'])->execute();
 
 
-        return Route::redirectTo(
-            Route::to('index', 'PhoneBookController', null, false));
+        if ($validation_result->getisValid()) {
+
+            $updatedContact->columns['name'] = $this->getPostRequestData('name');
+            $updatedContact->columns['number'] = $this->getPostRequestData('number');
+            $updatedContact->columns['job'] = $this->getPostRequestData('job');
+            $updatedContact->columns['location_address'] = $this->getPostRequestData('location_address');
+            $updatedContact->columns['location_lat'] = $this->getPostRequestData('lat');
+            $updatedContact->columns['location_long'] = $this->getPostRequestData('lng');
+            $updatedContact->columns['user_id'] = Auth::getInstance()->user()->id;
+            $updatedContact->update()->where([array("id", "=", $oldContact->id)])->execute();
+
+
+            return Route::redirectTo(
+                Route::to('index', 'PhoneBookController', null, false));
+        } else {
+            return $this->view->render('phone_book.create', $validation_result->getMessage());
+        }
+
     }
 
     public function delete($id)

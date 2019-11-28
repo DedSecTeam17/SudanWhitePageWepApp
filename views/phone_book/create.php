@@ -159,15 +159,17 @@ require 'views/partials/footer.php'
 
 
 <script>
-    var name = false;
-    var phone_number = false;
-    var job = false;
-    var address = false;
 
 
 
     $(document).ready(function () {
         //jQuery code goes here
+        var name = false;
+        var phone_number = false;
+        var job = false;
+        var address = false;
+
+
         checkIfAllValid();
 
 
@@ -235,12 +237,12 @@ require 'views/partials/footer.php'
 
         function checkIfAllValid() {
 
-            // if (name && job && address && phone_number ){
-            //     $('#submit_btn').prop('disabled', false);
-            // }else {
-            //     $('#submit_btn').prop('disabled', true);
-            //
-            // }
+            if (name && job && address && phone_number ){
+                $('#submit_btn').prop('disabled', false);
+            }else {
+                $('#submit_btn').prop('disabled', true);
+
+            }
         }
 
     });

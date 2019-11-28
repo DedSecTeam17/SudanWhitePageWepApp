@@ -80,7 +80,7 @@
                             ?:
                             array_push($this->validation_result, $hints_lab . "\t" . ' must be at least equal or less then ' . $max_value);
 
-                    }
+                    }else
 //                    email validation
                     if ($arr[$z] === 'email') {
                         $this->isEmail($data)
