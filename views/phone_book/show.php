@@ -14,14 +14,14 @@ require 'views/partials/nav_bar.php'
 <div class="container-fluid">
 
 
-    <div class="row ">
+    <div class="row mt-5">
 
 
 
 
 
         <div class="col-md-3 m-1 ">
-            <div class="card" id="googleMap" style="height: 400px">
+            <div class="card card-custom bg-white border-white border-0" id="googleMap" style="height: 400px">
                 <div class="card-body">
 
                 </div>
@@ -36,7 +36,7 @@ require 'views/partials/nav_bar.php'
 
                 </div>
                 <div class="col-md-6 m-1">
-                    <div class="card">
+                    <div class="card card-custom bg-white border-white border-0">
                         <div class="card-body">
                             <p><i class="fas fa-id-card"></i> <?php echo $data['contact']->name ?></p>
                             <p><i class="fas fa-mobile"></i> <?php echo $data['contact']->number ?></p>
@@ -54,7 +54,7 @@ require 'views/partials/nav_bar.php'
 
 
                 <div class="col-md-3 m-1">
-                    <div class="card">
+                    <div class="card card-custom bg-white border-white border-0">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-3">

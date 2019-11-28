@@ -18,7 +18,7 @@ require 'views/partials/nav_bar.php'
 
         <div class="col-md-4 offset-md-4">
 
-            <div class="card">
+            <div class="card card-custom bg-white border-white border-0">
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data"
                           action="<?php echo Route::to('update', 'ProfileController', $data['id'], true) ?>">

@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29bfda2b-88ac-4dab-9ec2-a1334f8a1fdf" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/public/style/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/PhoneBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/PhoneBook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/auth/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/auth/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/auth/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/auth/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/partials/headers.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/headers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/phone_book/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/phone_book/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/phone_book/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/phone_book/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book/show.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/phone_book_images/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book_images/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/profile/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/profile/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,28 +48,15 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="sudan_white_page: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="sudan_white_page: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="phone_book: table" type="dbc44a63:MariaImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="sudan_white_page: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="phone_book_images: table" type="dbc44a63:MariaImplModel$Table" />
-      </path>
     </expand>
     <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -80,6 +75,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/faicons" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.selected.package.jscs" value="" />
@@ -90,6 +86,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\server_projects\sudan_white_page\public\faicons" />
       <recent name="C:\xampp\htdocs\server_projects\sudan_white_page\public" />
       <recent name="C:\xampp\htdocs\projects\mvc_application\libs" />
       <recent name="C:\xampp\htdocs\projects\mvc_application\config" />
@@ -178,7 +175,7 @@
       <workItem from="1574696563449" duration="12768000" />
       <workItem from="1574790160758" duration="8528000" />
       <workItem from="1574880815364" duration="6224000" />
-      <workItem from="1574952512860" duration="14896000" />
+      <workItem from="1574952512860" duration="16022000" />
     </task>
     <servers />
   </component>

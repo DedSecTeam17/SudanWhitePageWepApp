@@ -17,7 +17,7 @@ require 'views/partials/nav_bar.php'
 
         <div class="row mt-5">
             <div class="col-md-4 offset-md-4">
-                <div class="card">
+                <div class="card card-custom bg-white border-white border-0">
 
                     <div class="card-body">
                         <form method="POST" enctype="multipart/form-data"
@@ -75,7 +75,7 @@ require 'views/partials/nav_bar.php'
 
 
                             echo ' <div class="col-md-6 mt-1">
-                            <div class="card">';
+                            <div class="card card-custom bg-white border-white border-0">';
 
 
                             echo '  <div class="card-header">';

@@ -19,7 +19,7 @@ require 'views/partials/nav_bar.php'
         <div class="col-md-8 offset-md-2">
 
 
-            <div class="card">
+            <div class="card card-custom bg-white border-white border-0">
                 <div class="card-body">
                     <a class="btn btn-outline-info m-2"
                        href="<?php echo Route::to('create', 'PhoneBookController', null, false) ?>"><i class="far fa-plus-square"></i> CREATE NEW CONTACT</a>

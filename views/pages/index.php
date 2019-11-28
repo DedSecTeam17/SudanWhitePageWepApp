@@ -40,8 +40,8 @@ require 'views/partials/nav_bar.php'
             ?>
 
 
-            <div class="  col-md-2  mt-1">
-                <div class="card">
+            <div class="  col-md-2  mt-5">
+                <div class="card card-custom bg-white border-white border-0">
                     <div class="card-body">
 
                         <div class="row mb-2 mt-2">
