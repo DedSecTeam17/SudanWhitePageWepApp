@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Home Page</title>
+    <title>Create new contact</title>
     <?php require 'views/partials/headers.php' ?>
 </head>
 
@@ -86,7 +86,7 @@ require 'views/partials/nav_bar.php'
 
                         </div>
 
-                        <button id="submit_btn" type="submit" class="btn btn-outline-primary btn-block">Save</button>
+                        <button id="submit_btn" type="submit" class="btn btn-outline-primary btn-block"><i class="fas fa-save"></i> Save</button>
                     </form>
                 </div>
 

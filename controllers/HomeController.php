@@ -37,10 +37,10 @@ class HomeController extends Controller
                 $contacts = $instance->select(['*'], null)->where([
                     array('name' , 'LIKE' , '%'.$q.'%')
                 ])->
-                orderBy('id', 'desc')->getAll();
+                orderBy('create_at', 'desc')->getAll();
             }else {
                 $contacts  = $instance->select(['*'], null)->
-                orderBy('id', 'desc')->getAll();
+                orderBy('create_at', 'desc')->getAll();
             }
 
 
@@ -68,7 +68,7 @@ class HomeController extends Controller
                     'author_name' => $user_by_profile->name,
                     "name" =>$contact->name,
                     "number" =>$contact->number,
-
+                    "create_at"=>$contact->create_at,
                     "id" =>$contact->id
                 ];
 

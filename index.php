@@ -15,6 +15,8 @@
     require 'libs/DataBase.php';
     require 'libs/Hash.php';
     require 'libs/Auth.php';
+    require  'libs/Cookie.php';
+    require  'libs/PrettyTime.php';
 
 
 

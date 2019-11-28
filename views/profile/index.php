@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Home Page</title>
+    <title>My profile</title>
     <?php require 'views/partials/headers.php' ?>
 </head>
 
@@ -48,7 +48,7 @@ require 'views/partials/nav_bar.php'
 
 
                     echo '<ul class="list-group list-group-flush mt-3">
-                             <li class="list-group-item"><p><i class="fas fa-id-card"> </i>' . $data['user_name'] . '</p></li>';
+                             <li class="list-group-item"><p><i class="fas fa-id-card"> </i> ' . $data['user_name'] . '</p></li>';
 
                     if (empty($data['profile'])) {
 
@@ -58,10 +58,10 @@ require 'views/partials/nav_bar.php'
                         echo '
                         
                           
-                            <li class="list-group-item"><p><i class="fas fa-mobile"> </i>' . $data['profile']->phone_number . '</p></li>' .
-                            '<li class="list-group-item"><p><i class="fas fa-briefcase"> </i>' . $data['profile']->job . '</p></li>' .
+                            <li class="list-group-item"><p><i class="fas fa-mobile"> </i> ' . $data['profile']->phone_number . '</p></li>' .
+                            '<li class="list-group-item"><p><i class="fas fa-briefcase"> </i> ' . $data['profile']->job . '</p></li>' .
 
-                            '<li class="list-group-item"><p><i class="fas fa-info"> </i>' . $data['profile']->about_me . '</p></li>';
+                            '<li class="list-group-item"><p><i class="fas fa-info"> </i> ' . $data['profile']->about_me . '</p></li>';
 
 
                     }
@@ -71,8 +71,16 @@ require 'views/partials/nav_bar.php'
                     ?>
 
 
-                    <a href="<?php echo Route::to('edit', 'ProfileController', !empty($data['profile']) ? $data['profile']->id : 0, true) ?>"
-                       class="btn btn-outline-info mt-2">Edit profile</a>
+
+                    <form method="get" action="<?php echo Route::to('edit', 'ProfileController', null, false) ?>">
+
+                        <input name="id" hidden value="<?php echo !empty($data['profile']) ? $data['profile']->id : 0?>">
+
+                        <button type="submit"
+                           class="btn btn-outline-info mt-2"><i class="far fa-edit"></i>  Edit profile</button>
+                    </form>
+
+
 
                 </div>
 

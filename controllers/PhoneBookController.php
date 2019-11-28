@@ -20,7 +20,7 @@ class PhoneBookController extends Controller
         $contacts = new PhoneBook();
 
         $data = $contacts->select(['*'], null)->where([array("user_id", "=", Auth::getInstance()->user()->id)])->
-        orderBy('id', 'desc')->getAll();
+        orderBy('create_at', 'desc')->getAll();
 
 
         return $this->view->render('phone_book.index', $data);
@@ -85,6 +85,8 @@ class PhoneBookController extends Controller
             $contact->columns['location_address'] = $this->getPostRequestData('location_address');
             $contact->columns['location_lat'] = $this->getPostRequestData('lat');
             $contact->columns['location_long'] = $this->getPostRequestData('lng');
+            $contact->columns['create_at'] = date(DATE_ISO8601);
+
             $contact->columns['user_id'] = Auth::getInstance()->user()->id;
 
 

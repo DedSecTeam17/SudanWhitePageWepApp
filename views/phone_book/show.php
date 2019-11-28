@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Home Page</title>
+    <title>Show</title>
     <?php require 'views/partials/headers.php' ?>
 </head>
 
@@ -14,10 +14,13 @@ require 'views/partials/nav_bar.php'
 <div class="container-fluid">
 
 
-    <div class="row m-5">
+    <div class="row ">
 
 
-        <div class="col-md-3 ">
+
+
+
+        <div class="col-md-3 m-1 ">
             <div class="card" id="googleMap" style="height: 400px">
                 <div class="card-body">
 
@@ -26,10 +29,13 @@ require 'views/partials/nav_bar.php'
         </div>
 
 
-        <div class="col-md-9">
+        <div class="col-md-8 ">
 
-            <div class="row">
-                <div class="col-md-6">
+            <div class="row ">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-6 m-1">
                     <div class="card">
                         <div class="card-body">
                             <p><i class="fas fa-id-card"></i> <?php echo $data['contact']->name ?></p>
@@ -37,16 +43,21 @@ require 'views/partials/nav_bar.php'
                             <p><i class="fas fa-map-marker-alt"></i> <?php echo $data['contact']->location_address ?>
                             </p>
                             <p><i class="fas fa-briefcase"></i> <?php echo $data['contact']->job ?></p>
+                            <p><i class="far fa-clock"></i> <?php echo PrettyTime::ago($data['contact']->create_at) ?></p>
+
                         </div>
                     </div>
                 </div>
 
 
-                <div class="col-md-3">
+
+
+
+                <div class="col-md-3 m-1">
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-3">
 
 
                                     <?php
@@ -59,9 +70,9 @@ require 'views/partials/nav_bar.php'
 
                                 </div>
 
-                                <div class="col-md-9">
-                                    <p style="font-size: 12px"><?php echo $data['user']->name ?></p>
-                                    <p style="font-size: 11px"><?php echo $data['user']->email ?></p>
+                                <div class="col-9">
+                                    <p style="font-size: 14px; margin-top: 5%"><i class="fas fa-crown" style="color: gold"></i><?php echo $data['user']->name ?></p>
+<!--                                    <p style="font-size: 11px">--><?php //echo $data['user']->email ?><!--</p>-->
                                 </div>
                             </div>
 
@@ -105,12 +116,15 @@ require 'views/partials/nav_bar.php'
                     </div>
                 </div>
 
-
             </div>
 
 
             <div class="row mt-5 mb-5">
 
+
+                <div class="col-md-2">
+
+                </div>
 
                 <div class="col-md-6">
 
@@ -121,7 +135,7 @@ require 'views/partials/nav_bar.php'
 
 
                         foreach ($data['images'] as $image) {
-                            echo '   <div class="col-md-4 mt-1">';
+                            echo '   <div class="col-md-4 m-1">';
                             echo '<img src="' . '../public/img/contacts_images/' . $image->image_url . '"  style= "width  : 300px; height : 200px" class="img-fluid rounded " >';
                             echo '  </div>';
                         }
@@ -139,6 +153,9 @@ require 'views/partials/nav_bar.php'
             </div>
 
         </div>
+
+
+
     </div>
 
 

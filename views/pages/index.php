@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Home Page</title>
+    <title>Home</title>
     <?php require 'views/partials/headers.php' ?>
 </head>
 <body>
@@ -14,12 +14,25 @@ require 'views/partials/nav_bar.php'
 <div class="container-fluid">
 
 
-
-
     <div class="row ">
 
 
         <?php
+
+
+        if (sizeof($data) <= 0) {
+
+            echo '<div class=" col-md-6 offset-md-3 mt-5">
+
+
+<div class="text-center">
+<img src="../public/no_result.png" width="300" height="300"> 
+
+</div>
+
+</div>';
+
+        }
 
 
         foreach ($data as $contact) {
@@ -27,7 +40,7 @@ require 'views/partials/nav_bar.php'
             ?>
 
 
-            <div class="  col-md-3  mt-1">
+            <div class="  col-md-2  mt-1">
                 <div class="card">
                     <div class="card-body">
 
@@ -53,15 +66,20 @@ require 'views/partials/nav_bar.php'
                         <hr>
 
 
-                        <p><i class="fas fa-id-card"></i>  <?php echo $contact->name?></p>
-                        <p><i class="fas fa-mobile"></i>  <?php echo $contact->number ?></p>
+                        <p><i class="fas fa-id-card"></i> <?php echo $contact->name ?></p>
+                        <p><i class="fas fa-mobile"></i> <?php echo $contact->number ?></p>
+                        <p><i class="far fa-clock"></i> <?php echo PrettyTime::ago($contact->create_at) ?></p>
+
+
                     </div>
 
                     <div class="card-footer">
 
                         <form action="<?php echo Route::to('show', 'PhoneBookController', null, false) ?>" method="get">
                             <input hidden name="id" value="<?php echo $contact->id ?>">
-                            <button type="submit" class="btn btn-outline-info btn-block">More details</button>
+                            <button type="submit" class="btn btn-outline-info btn-block"><i
+                                        class="fas fa-info-circle"></i> More details
+                            </button>
                         </form>
 
 

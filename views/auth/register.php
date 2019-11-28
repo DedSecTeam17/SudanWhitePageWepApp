@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Home Page</title>
+    <title>Sign up</title>
     <?php require 'views/partials/headers.php' ?>
 </head>
 <body>
@@ -59,7 +59,7 @@ require 'views/partials/nav_bar.php'
                             </div>
                         </div>
 
-                        <button id="submit_btn" type="submit" class="btn btn-primary btn-block">Register</button>
+                        <button id="submit_btn" type="submit" class="btn btn-outline-primary btn-block"><i class="fas fa-user-plus"></i> Register</button>
                     </form>
 
                 </div>

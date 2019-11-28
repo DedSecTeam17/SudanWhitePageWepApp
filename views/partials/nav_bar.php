@@ -1,5 +1,5 @@
 <nav class="navbar  navbar-expand-lg navbar-dark bg-dark ">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#"><img src="../public/logo.png" width="30" height="30"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -18,17 +18,14 @@
 
 
             <li <?php if ($req_uri === "/server_projects/sudan_white_page/HomeController/index") { ?>  class=" nav-item active"   <?php } else { ?>      class="nav-item"   <?php } ?> >
-                <a class="nav-link" href="<?php echo Route::to('index', 'HomeController', null, false) ?>">Home</a>
+                <a class="nav-link" href="<?php echo Route::to('index', 'HomeController', null, false) ?>"><i class="fas fa-home"></i> Home</a>
             </li>
 
-            <li <?php if ($req_uri === "/server_projects/sudan_white_page/HomeController/ContactUs") { ?>  class=" nav-item active"   <?php } else { ?>      class="nav-item"   <?php } ?>>
-                <a class="nav-link" href="<?php echo Route::to('ContactUs', 'HomeController', null, false) ?>">Contact
-                    Us</a>
-            </li>
+
 
 
             <li <?php if ($req_uri === "/server_projects/sudan_white_page/HomeController/about") { ?>  class=" nav-item active"   <?php } else { ?>      class="nav-item"   <?php } ?>>
-                <a class="nav-link" href="<?php echo Route::to('about', 'HomeController', null, false) ?>">About Us</a>
+                <a class="nav-link" href="<?php echo Route::to('about', 'HomeController', null, false) ?>"><i class="fas fa-info-circle"></i> About Us</a>
             </li>
 
         </ul>
@@ -40,7 +37,7 @@
         </form>
 
 
-        <ul class="navbar-nav mr-5">
+        <ul class="navbar-nav " style="margin-right: 10%">
             <li class="nav-item dropdown ">
 
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -56,24 +53,24 @@
                     <?php if (!Auth::getInstance()->isAuthenticated()) { ?>
 
                         <a class="dropdown-item"
-                           href="<?php echo Route::to('getLogin', 'AuthController', null, false) ?>">Login</a>
+                           href="<?php echo Route::to('getLogin', 'AuthController', null, false) ?>"><i class="fas fa-sign-in-alt"></i> Login</a>
                         <a class="dropdown-item"
-                           href="<?php echo Route::to('getRegister', 'AuthController', null, false) ?>">Register</a>
+                           href="<?php echo Route::to('getRegister', 'AuthController', null, false) ?>"><i class="fas fa-user-plus"></i> Register</a>
 
                     <?php } else { ?>
 
                         <!--                        <div class="dropdown-divider"></div>-->
 
                         <a class="dropdown-item"
-                           href="<?php echo Route::to('index', 'ProfileController', null, false) ?>">My
+                           href="<?php echo Route::to('index', 'ProfileController', null, false) ?>"><i class="fas fa-user-circle"></i> My
                             profile</a>
 
                         <a class="dropdown-item"
-                           href="<?php echo Route::to('index', 'PhoneBookController', null, false) ?>">My Contacts</a>
+                           href="<?php echo Route::to('index', 'PhoneBookController', null, false) ?>"><i class="fas fa-address-book"></i> My Contacts</a>
 
 
                         <a class="dropdown-item"
-                           href="<?php echo Route::to('getLogOut', 'AuthController', null, false) ?>">Log out</a>
+                           href="<?php echo Route::to('getLogOut', 'AuthController', null, false) ?>"><i class="fas fa-sign-out-alt"></i> Log out</a>
 
                     <?php } ?>
 

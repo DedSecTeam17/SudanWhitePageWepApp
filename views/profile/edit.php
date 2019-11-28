@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Home Page</title>
+    <title>Edit my profile</title>
     <?php require 'views/partials/headers.php' ?>
 </head>
 
@@ -71,7 +71,7 @@ require 'views/partials/nav_bar.php'
                         </div>
 
 
-                        <button id="submit_btn" type="submit" class="btn btn-outline-primary btn-block">Update</button>
+                        <button id="submit_btn" type="submit" class="btn btn-outline-primary btn-block"><i class="far fa-edit"></i>  Edit</button>
                     </form>
                 </div>
 

@@ -39,8 +39,10 @@ class ProfileController
 
     }
 
-    public function edit($id)
+    public function edit()
     {
+        $id=$this->getGetRequestData('id');
+
         $instance = new Profile();
         $profile = $instance->find($id);
 

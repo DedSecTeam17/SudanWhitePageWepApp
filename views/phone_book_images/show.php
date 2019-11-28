@@ -1,6 +1,6 @@
 <html lang="ar">
 <head>
-    <title>Home Page</title>
+    <title>Show Images</title>
     <?php require 'views/partials/headers.php' ?>
 </head>
 

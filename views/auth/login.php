@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Home Page</title>
+    <title>Sign in</title>
     <?php require 'views/partials/headers.php' ?>
 </head>
 <body>
@@ -16,14 +16,25 @@ require 'views/partials/nav_bar.php'
 
     <div class="row m-3">
         <div class="col-md-4 offset-md-4">
+
+
+
             <?php
+
+
+
+
+            echo  Cookie::getLastTime();
+
             isset($data) ? Message::AlertDanger($data) : '';
             ?>
             <div class="card">
                 <div class="card-body">
 
                     <form method="post" action="<?php echo Route::to('loginStore', 'AuthController', null) ?>">
-                        <div class="form-group">
+
+
+                        <div class="form-group ">
                             <label for="email">Email address</label>
                             <input type="email" class="form-control" id="email"
                                    aria-describedby="emailHelp" placeholder="Enter email" name="email" required>
@@ -45,7 +56,7 @@ require 'views/partials/nav_bar.php'
                                 valid password
                             </div>
                         </div>
-                        <button id="submit_btn"  type="submit" class="btn btn-outline-primary btn-block">Log in</button>
+                        <button id="submit_btn"  type="submit" class="btn btn-outline-primary btn-block"><i class="fas fa-sign-in-alt"></i> Log in</button>
                     </form>
 
                 </div>

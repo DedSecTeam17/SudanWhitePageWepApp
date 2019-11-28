@@ -46,6 +46,8 @@
                 if ($id > 0) {
 
                     Auth::getInstance()->authenticateNewUser($id);
+                    Cookie::setLatTime();
+
 
                     Route::redirectTo(
                         Route::to('index', 'HomeController', null, false));

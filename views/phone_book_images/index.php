@@ -1,6 +1,6 @@
 <html lang="ar">
 <head>
-    <title>Home Page</title>
+    <title>All Images</title>
     <?php require 'views/partials/headers.php' ?>
 </head>
 
@@ -43,11 +43,29 @@ require 'views/partials/nav_bar.php'
 
     </div>
 
+
+    <?php
+
+    if (sizeof($data['images']) <= 0) {
+
+        echo '<div class=" col-md-6 offset-md-3 mt-5">
+
+
+<div class="text-center">
+<img src="../public/no_result.png" width="300" height="300"> 
+
+</div>
+
+</div>';
+
+    }
+
+
+    ?>
+
     <div class="row mt-5">
         <div class="col-md-4 offset-md-4">
-            <div class="card">
 
-                <div class="card-body">
                     <div class="row">
 
                         <?php
@@ -95,9 +113,7 @@ require 'views/partials/nav_bar.php'
 
                         <!--                   -->
                     </div>
-                </div>
 
-            </div>
         </div>
     </div>
 

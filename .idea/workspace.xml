@@ -2,25 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29bfda2b-88ac-4dab-9ec2-a1334f8a1fdf" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/libs/Cookie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/PrettyTime.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/no_result.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/PhoneBookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PhoneBookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/GreenValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/GreenValidator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/1574790539a.jpg.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574790515a.jpg.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574790520796833.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574792229aa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/15747953571102013.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574796337hero1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574796343NYstatueofliberty.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574796349photo-1536031696538-924fe11c7037.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574796355aa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574797858PicsArt_08-12-11.13.40.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574797868PicsArt_10-27-05.47.42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/1574797878PicsArt_07-30-01.32.52.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/contacts_images/157479789515747978868383315055338567051895.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/1574891497download.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/auth/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/auth/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/auth/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/auth/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/nav_bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/nav_bar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/phone_book/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book/create.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/phone_book/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/phone_book/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/phone_book/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book/show.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/phone_book_images/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book_images/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/phone_book_images/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book_images/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/phone_book_images/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/phone_book_images/show.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/profile/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/profile/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,24 +109,25 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.smarty" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\server_projects\sudan_white_page\public" />
+      <recent name="C:\xampp\htdocs\projects\mvc_application\libs" />
+      <recent name="C:\xampp\htdocs\projects\mvc_application\config" />
+      <recent name="C:\xampp\htdocs\projects\mvc_application\public\img" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\projects\mvc_application\views\phone" />
       <recent name="C:\xampp\htdocs\projects\mvc_application\public\xml_data" />
       <recent name="C:\xampp\htdocs\projects\mvc_application\models" />
       <recent name="C:\xampp\htdocs\projects\mvc_application\models\data" />
       <recent name="C:\xampp\htdocs\projects\mvc_application\controllers\img" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\projects\mvc_application\libs" />
-      <recent name="C:\xampp\htdocs\projects\mvc_application\config" />
-      <recent name="C:\xampp\htdocs\projects\mvc_application\public\img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -198,7 +205,7 @@
       <workItem from="1574696563449" duration="12768000" />
       <workItem from="1574790160758" duration="8528000" />
       <workItem from="1574880815364" duration="6224000" />
-      <workItem from="1574952512860" duration="2685000" />
+      <workItem from="1574952512860" duration="12345000" />
     </task>
     <servers />
   </component>
