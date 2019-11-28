@@ -14,16 +14,25 @@ require  'models/Profile.php';
 require  'models/User.php';
 
 
+/**
+ * Class HomeController
+ */
 class HomeController extends Controller
     {
 
 
-        public function __construct()
+    /**
+     * HomeController constructor.
+     */
+    public function __construct()
         {
             Parent::__construct();
         }
 
-        public function index()
+    /**
+     * @return mixed
+     */
+    public function index()
         {
 
             $q = !is_null($this->getGetRequestData("q")) ?  $this->getGetRequestData("q") : null;
@@ -79,13 +88,9 @@ class HomeController extends Controller
         }
 
 
-
-
-
-
-
-
-
+    /**
+     *
+     */
     public function search()
     {
 
@@ -135,19 +140,28 @@ class HomeController extends Controller
     }
 
 
-        public function about()
+    /**
+     * @return mixed
+     */
+    public function about()
         {
             return $this->view->render('pages.about');
 
         }
 
-        public function contactUs()
+    /**
+     * @return mixed
+     */
+    public function contactUs()
         {
             return $this->view->render('pages.contactUs');
 
         }
 
-        public  function  home(){
+    /**
+     * @return mixed
+     */
+    public  function  home(){
             $this->middleWare('Auth');
             return $this->view->render('pages.home');
 

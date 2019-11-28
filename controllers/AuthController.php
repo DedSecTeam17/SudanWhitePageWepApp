@@ -11,6 +11,9 @@
     {
 
 
+        /**
+         * AuthController constructor.
+         */
         public function __construct()
         {
             Parent::__construct('User');
@@ -18,17 +21,30 @@
         }
 
 
+        /**
+         * @return mixed
+         * render sign in to end user
+         */
         function getLogin()
         {
             return $this->view->render('auth.login');
         }
 
-
+//
+        /**
+         * @return mixed
+         * render sign up to end user
+         */
         function getRegister()
         {
             return $this->view->render('auth.register');
         }
 
+        /**
+         * @param bool $args
+         * @return mixed
+         * compare user password and email with db if correct redirect to home page else show error message
+         */
         function loginStore($args = false)
         {
 
@@ -62,6 +78,10 @@
             }
         }
 
+        /**
+         * @return mixed
+         * save user data into database and redirect to login page to do authentication
+         */
         function registerStore()
         {
             $validation_result = $this->validator->validate([
@@ -95,6 +115,9 @@
         }
 
 
+        /**
+         *log out and redirect to login page
+         */
         public function getLogOut()
         {
             Auth::getInstance()->logout();
