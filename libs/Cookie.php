@@ -12,7 +12,7 @@ class Cookie
 //            echo "The time in " . date_default_timezone_get() . " is " . date("H:i:s");
 
 
-            setCookie('lasttime', date(DATE_ISO8601), time() + 604800);
+            setCookie('lasttime', date(DATE_ISO8601), time() + 86400 * 7);
     }
 
 

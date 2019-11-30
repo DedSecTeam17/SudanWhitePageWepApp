@@ -13,27 +13,33 @@
             $req_uri = $_SERVER['REQUEST_URI'];
 
 
-
             ?>
 
 
             <li <?php if ($req_uri === "/server_projects/sudan_white_page/HomeController/index") { ?>  class=" nav-item active"   <?php } else { ?>      class="nav-item"   <?php } ?> >
-                <a class="nav-link" href="<?php echo Route::to('index', 'HomeController', null, false) ?>"><i class="fas fa-home"></i> Home</a>
+                <a class="nav-link" href="<?php echo Route::to('index', 'HomeController', null, false) ?>"><i
+                            class="fas fa-home"></i> Home</a>
+            </li>
+
+            <li <?php if ($req_uri === "/server_projects/sudan_white_page/HomeController/home") { ?>  class=" nav-item active"   <?php } else { ?>      class="nav-item"   <?php } ?> >
+                <a class="nav-link" href="<?php echo Route::to('home', 'HomeController', null, false) ?>"><i
+                            class="fas fa-id-card-alt"></i> Contacts</a>
             </li>
 
 
-
-
             <li <?php if ($req_uri === "/server_projects/sudan_white_page/HomeController/about") { ?>  class=" nav-item active"   <?php } else { ?>      class="nav-item"   <?php } ?>>
-                <a class="nav-link" href="<?php echo Route::to('about', 'HomeController', null, false) ?>"><i class="fas fa-info-circle"></i> About Us</a>
+                <a class="nav-link" href="<?php echo Route::to('about', 'HomeController', null, false) ?>"><i
+                            class="fas fa-info-circle"></i> About Us</a>
             </li>
 
         </ul>
 
 
-        <form class="form-inline my-2 my-lg-0" method="get" action="<?php echo Route::to('index', 'HomeController', null, false) ?>">
-            <input name="q" class="form-control mr-sm-2" type="search" placeholder="Search  by contact name" aria-label="Search  by contact name">
-            <button  class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+        <form class="form-inline my-2 my-lg-0" method="get"
+              action="<?php echo Route::to('index', 'HomeController', null, false) ?>">
+            <input name="q" class="form-control mr-sm-2" type="search" placeholder="Search  by contact name"
+                   aria-label="Search  by contact name">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
         </form>
 
 
@@ -53,24 +59,29 @@
                     <?php if (!Auth::getInstance()->isAuthenticated()) { ?>
 
                         <a class="dropdown-item"
-                           href="<?php echo Route::to('getLogin', 'AuthController', null, false) ?>"><i class="fas fa-sign-in-alt"></i> Login</a>
+                           href="<?php echo Route::to('getLogin', 'AuthController', null, false) ?>"><i
+                                    class="fas fa-sign-in-alt"></i> Login</a>
                         <a class="dropdown-item"
-                           href="<?php echo Route::to('getRegister', 'AuthController', null, false) ?>"><i class="fas fa-user-plus"></i> Register</a>
+                           href="<?php echo Route::to('getRegister', 'AuthController', null, false) ?>"><i
+                                    class="fas fa-user-plus"></i> Register</a>
 
                     <?php } else { ?>
 
                         <!--                        <div class="dropdown-divider"></div>-->
 
                         <a class="dropdown-item"
-                           href="<?php echo Route::to('index', 'ProfileController', null, false) ?>"><i class="fas fa-user-circle"></i> My
+                           href="<?php echo Route::to('index', 'ProfileController', null, false) ?>"><i
+                                    class="fas fa-user-circle"></i> My
                             profile</a>
 
                         <a class="dropdown-item"
-                           href="<?php echo Route::to('index', 'PhoneBookController', null, false) ?>"><i class="fas fa-address-book"></i> My Contacts</a>
+                           href="<?php echo Route::to('index', 'PhoneBookController', null, false) ?>"><i
+                                    class="fas fa-address-book"></i> My Contacts</a>
 
 
                         <a class="dropdown-item"
-                           href="<?php echo Route::to('getLogOut', 'AuthController', null, false) ?>"><i class="fas fa-sign-out-alt"></i> Log out</a>
+                           href="<?php echo Route::to('getLogOut', 'AuthController', null, false) ?>"><i
+                                    class="fas fa-sign-out-alt"></i> Log out</a>
 
                     <?php } ?>
 
@@ -85,6 +96,27 @@
 </nav>
 
 
+<!--<div class="row m-1">-->
+<!--    <div class="col-md-2 ">-->
+<!--        <div class="--><?php //echo  Auth::getInstance()->isAuthenticated() ?   'alert alert-success' :  'alert alert-danger'  ?><!--">-->
+<!---->
+<!---->
+<!---->
+<!--            --><?php
+//
+//
+//            if (Auth::getInstance()->isAuthenticated()){
+//                echo    'Welcome '.Auth::getInstance()->user()->name;
+//            }else{
+//                echo    'Not Authorized yet ';
+//
+//            }
+//            ?>
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!---->
+<!---->
 
 
 

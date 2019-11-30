@@ -21,7 +21,7 @@ require 'views/partials/nav_bar.php'
             <div class="card card-custom bg-white border-white border-0">
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data"
-                          action="<?php echo Route::to('update', 'ProfileController', $data['id'], true) ?>">
+                          action="<?php echo Route::to('update', 'ProfileController',!empty( $data['id']) ?  $data['id'] : 0, true) ?>">
 
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Upload profile image</label>
@@ -94,7 +94,7 @@ require 'views/partials/nav_bar.php'
 
         var phone_number = true;
         var job = true;
-        var address = true;
+        var about = true;
 
 
         checkIfAllValid();
@@ -139,11 +139,11 @@ require 'views/partials/nav_bar.php'
             console.log(is_name);
             if (is_name) {
                 input.removeClass("is-invalid").addClass("is-valid");
-                address = true;
+                about = true;
                 checkIfAllValid();
             } else {
                 input.removeClass("is-valid").addClass("is-invalid");
-                address = false;
+                about = false;
                 checkIfAllValid();
 
             }
@@ -152,10 +152,14 @@ require 'views/partials/nav_bar.php'
 
         function checkIfAllValid() {
 
-            if (name && job && address && phone_number) {
+            if ( job && about && phone_number) {
+                console.log('valid');
+                console.log()
                 $('#submit_btn').prop('disabled', false);
             } else {
                 $('#submit_btn').prop('disabled', true);
+                console.log('not valid');
+
 
             }
         }

@@ -5,24 +5,18 @@
 </head>
 <body>
 <!--    nav bar -->
-
+<?php
+require 'views/partials/nav_bar.php'
+?>
 <div class="container-fluid">
-    <?php
-        require 'views/partials/nav_bar.php'
-    ?>
+
 
     <div class="raw m-3">
         <div class="col-md-8 offset-2">
-            <div class="alert alert-danger">
+            <div class="text-center">
+                <img src="../public/not_found.png" width="800" height="600">
 
-                <?php
-
-                    echo  $data;
-
-
-                ?>
-            </div>
-        </div>
+            </div>        </div>
     </div>
 
 </div>

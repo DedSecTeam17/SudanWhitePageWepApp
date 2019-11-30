@@ -47,7 +47,7 @@
                          if (!Auth::getInstance()->isAuthenticated()) {
                              Route::redirectTo(Route::to('index', 'HomeController', null, false));
                          }
-                     }else if ('quest')
+                     }else if ($user_type==='quest')
                      {
                          Route::redirectTo(Route::to('index', 'HomeController', null, false));
 
@@ -62,9 +62,18 @@
                     if (!Auth::getInstance()->isAuthenticated()) {
                         Route::redirectTo(Route::to('index', 'HomeController', null, false));
                     }
-                }else if ('quest')
+                }else if ($user_type==='Quest')
                 {
-                    Route::redirectTo(Route::to('index', 'HomeController', null, false));
+
+                    if (!empty(Auth::getInstance()->isAuthenticated())) {
+                        Route::redirectTo(Route::to('index', 'HomeController', null, false));
+                    }else{
+                        Route::redirectTo(Route::to('index', 'HomeController', null, false));
+
+                    }
+//                    Route::redirectTo(Route::to('index', 'HomeController', null, false));
+
+//                    Route::redirectTo(Route::to('index', 'HomeController', null, false));
 
                 }
             }

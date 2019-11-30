@@ -4,8 +4,16 @@ require 'models/Profile.php';
 require 'models/User.php';
 
 
+/**
+ * Class PhoneBookController
+ */
 class PhoneBookController extends Controller
 {
+    /**
+     * PhoneBookController constructor.
+     * give it the model related to this controller
+     * you can assign middleware on top of this controller for redirection purpose
+     */
     public function __construct()
     {
         Parent::__construct('PhoneBook');
@@ -14,6 +22,11 @@ class PhoneBookController extends Controller
     }
 
 
+    /**
+     * @return mixed
+     * get all contacts related to authenticated user order by creation date
+     * and render index page to show all  data
+     */
     public function index()
     {
 
@@ -26,18 +39,27 @@ class PhoneBookController extends Controller
         return $this->view->render('phone_book.index', $data);
     }
 
+    /**
+     * @return mixed
+     * render crate pate to add new contact
+     */
     public function create()
     {
         return $this->view->render('phone_book.create');
 
     }
 
+    /**
+     * @return mixed
+     * render dhow page include all data related to specific contact
+     */
     public function show()
     {
 
 
 //       echo  $new;
 
+        /** @var TYPE_NAME $id */
         $id = $this->getGetRequestData('id');
         $contact = new PhoneBook();
         $profile = new Profile();
@@ -62,6 +84,11 @@ class PhoneBookController extends Controller
 
     }
 
+    /**
+     * @return mixed|void
+     * get all data from post or get request to sett model vars and then use model method to add new contact
+     * then redirect to index page to see last added contact
+     */
     public function store()
     {
 
@@ -104,6 +131,13 @@ class PhoneBookController extends Controller
 
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     * contact id passed from url to get selected contact
+     *pass selected contact to view to show it ot user
+     *render edit page
+     */
     public function edit($id)
     {
 
@@ -116,6 +150,11 @@ class PhoneBookController extends Controller
     }
 
 
+    /**
+     * @param $id
+     * @return mixed|void
+     * update  selected contact by it id then redirect io index page
+     */
     public function update($id)
     {
 
@@ -154,6 +193,10 @@ class PhoneBookController extends Controller
 
     }
 
+    /**
+     * @param $id
+     * delete specific contact by id then redirect to index page
+     */
     public function delete($id)
     {
 
@@ -186,6 +229,9 @@ class PhoneBookController extends Controller
             Route::to('index', 'PhoneBookController', null, false));
     }
 
+    /**
+     *
+     */
     public function search()
     {
 

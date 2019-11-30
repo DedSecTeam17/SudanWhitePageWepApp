@@ -10,13 +10,22 @@ class ErrorsController extends  Controller
 {
 
 
-
+    /**
+     * ErrorsController constructor.
+     */
     public function __construct()
     {
        Parent::__construct();
     }
 
 
+
+//    show
+
+    /**
+     * @return mixed
+     * show error to user say that page not found
+     */
     public  function  err(){
         return $this->view->render('errors.error');
     }

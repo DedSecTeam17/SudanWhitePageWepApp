@@ -1,10 +1,17 @@
 <?php
 
 
-
+/**
+ * Class PhoneBookImagesController
+ */
 class PhoneBookImagesController
     extends Controller
 {
+    /**
+     * PhoneBookImagesController constructor.
+     * give it the model related to this controller
+     * you can assign middleware on top of this controller for redirection purpose
+  */
     public function __construct()
     {
         Parent::__construct('PhoneBookImages');
@@ -13,6 +20,10 @@ class PhoneBookImagesController
     }
 
 
+    /**
+     * @return mixed
+     * get all images related to contact
+     */
     public function index()
     {
 
@@ -30,6 +41,10 @@ class PhoneBookImagesController
     }
 
 
+    /**
+     * @return mixed
+     * render create new contact image page
+     */
     public function create()
     {
 
@@ -37,6 +52,10 @@ class PhoneBookImagesController
     }
 
 
+    /**
+     *save images to public folder withing img/contacts_images
+     * use image uri and save it into DB then redirect to index page
+     */
     public function store()
     {
 
@@ -85,6 +104,10 @@ class PhoneBookImagesController
     }
 
 
+    /**
+     * @param $id
+     * delete image related to contact by it id and from public folder and DB then redirect to index page
+     */
     public function delete($id)
     {
         $phone_book_id = $this->getGetRequestData('contact_id');

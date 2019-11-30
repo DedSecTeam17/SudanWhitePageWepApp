@@ -56,21 +56,32 @@
             if ($validation_result->getisValid()) {
                 $user = new User();
 
-                $id = $user
+                $authnticated_user = $user
                     ->select(['id'], null, null)
                     ->where([['email', '=', $this->getPostRequestData('email'), '&&'], ['password', '=', Hash::passwordHashing($this->getPostRequestData('password'))]])->get();
-                if ($id > 0) {
-
-                    Auth::getInstance()->authenticateNewUser($id);
-                    Cookie::setLatTime();
 
 
-                    Route::redirectTo(
-                        Route::to('index', 'HomeController', null, false));
-                }else {
+                if (!empty($authnticated_user)){
+                    if ($authnticated_user->id > 0) {
+
+//                    echo  $authnticated_user;
+                        Auth::getInstance()->authenticateNewUser($authnticated_user);
+
+//                    print_r(Auth::getInstance()->user());
+                        Cookie::setLatTime();
+
+
+                        Route::redirectTo(
+                            Route::to('index', 'HomeController', null, false));
+                    }else {
+                        $error = "Email or password wrong";
+                        return $this->view->render('auth.login', $error);
+                    }
+                }else{
                     $error = "Email or password wrong";
                     return $this->view->render('auth.login', $error);
                 }
+
 
             } else {
                 $error = $validation_result->getMessage();

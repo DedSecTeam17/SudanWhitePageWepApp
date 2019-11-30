@@ -1,9 +1,17 @@
 <?php
 
 
+/**
+ * Class ProfileController
+ */
 class ProfileController
     extends Controller
 {
+    /**
+     * ProfileController constructor.
+      * give it the model related to this controller
+     * you can assign middleware on top of this controller for redirection purpose
+     */
     public function __construct()
     {
         Parent::__construct('Profile');
@@ -13,6 +21,10 @@ class ProfileController
     }
 
 
+    /**
+     * @return mixed
+     * get authenticated user data from profile datable
+     */
     public function index()
     {
 
@@ -29,16 +41,27 @@ class ProfileController
         ]);
     }
 
+    /**
+     * @return mixed
+     * render profile create page
+     */
     public function create()
     {
         return $this->view->render('profile.create');
     }
 
+    /**
+     *
+     */
     public function store()
     {
 
     }
 
+    /**
+     * @return mixed
+     * get user profile id from ulr to get current data and send int withing render function to edit page
+     */
     public function edit()
     {
         $id=$this->getGetRequestData('id');
@@ -55,6 +78,10 @@ class ProfileController
 
     }
 
+    /**
+     * @param $id
+     * update profile data or insert new onr if we have data previously then no add just update else insert new one
+     */
     public function update($id)
     {
         $profile = new Profile();
@@ -86,6 +113,9 @@ class ProfileController
     }
 
 
+    /**
+     *add new profile data
+     */
     private function insertProfileData()
     {
 
@@ -118,6 +148,10 @@ class ProfileController
     }
 
 
+    /**
+     * @param $id
+     * udale profile data by id
+     */
     private function updateProfileData($id)
     {
         $instance = new Profile();
